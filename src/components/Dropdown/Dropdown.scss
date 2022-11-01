@@ -1,0 +1,161 @@
+@import '../../scss/_common.scss';
+
+.Dropdown {
+  display: inline-block;
+  box-sizing: border-box;
+  min-width: 100px;
+  outline: 0;
+  background-color: vars(--reva-global-control-bg, #fff);
+
+  .reveler-container {
+    position: relative;
+  }
+
+  &.wide {
+    width: 100%;
+  }
+
+  .error {
+    margin-top: .25rem;
+    text-align: left;
+
+    &.alignRightErrorMsg {
+      text-align: right;
+    }
+  }
+
+  &.big {
+    .Trigger {
+      padding: (5rem/16) 0;
+    }
+
+    .Caret {
+      height: 52px;
+    }
+  }
+}
+
+.Dropdown * {
+  box-sizing: border-box;
+}
+
+.FlyOut {
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  min-width: 150px;
+  border: (1rem/16) solid vars(--reva-global-control-border-color, #e0e0e0);
+  border-radius: .1875rem;
+  outline: 0;
+  background: vars(--reva-global-control-bg, #fff);
+
+  [data-input-method='keyboard'] & {
+    @include focusOutlineProps();
+  }
+
+  &.error {
+    @include errorOutlineProps();
+  }
+}
+
+.Trigger {
+  position: relative;
+  display: block;
+  min-height: 40px;
+  cursor: pointer;
+  border: (1rem/16) solid vars(--reva-global-control-border-color, #e0e0e0);
+  border-radius: .1875rem;
+  outline: 0;
+
+  &.focused {
+    [data-input-method='keyboard'] & {
+      @include focusOutlineProps();
+    }
+  }
+
+  &.error {
+    @include errorOutlineProps();
+  }
+
+  &:hover {
+    background: vars(--reva-global-control-bg-hover, #eee);
+  }
+}
+
+.ListItem {
+  line-height: 40px;
+  display: flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 0 15px 0 25px;
+  cursor: pointer;
+}
+
+.Selected {
+  width: 100%;
+  padding-right: 40px;
+
+  [data-browser='msie11'] & {
+    display: flex;
+  }
+}
+
+.Caret {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 40px;
+
+  span {
+    line-height: 10px;
+    display: block;
+    transition: transform .3s ease-out;
+    transform: scale(1.3) rotate(180deg);
+  }
+
+  &.show {
+    span {
+      transform: scale(1.3) rotate(0);
+    }
+  }
+}
+
+.List {
+  overflow: auto;
+  max-height: 400px;
+
+  .ListItem {
+    &[data-item-selected='true'] {
+      background: vars(--reva-global-control-bg-selected, #ddd);
+    }
+
+    &[data-item-focused='true'] {
+      background: vars(--reva-global-control-bg-focused, #eee);
+    }
+
+    &:hover {
+      background: vars(--reva-global-control-bg-hover, #eee);
+    }
+  }
+}
+
+.ListItemText {
+  font-family: vars(--reva-global-control-font-family, --reva-typography-font-family, 'Lato');
+  font-size: vars(--reva-global-control-font-size, (15rem/16));
+  margin: 0;
+  color: vars(--reva-global-control-color, #000);
+
+  &.showPlaceholder {
+    color: vars(--reva-global-control-placeholder-color, #8c8c8c);
+  }
+
+  &.lighterPlaceholder {
+    opacity: .6;
+  }
+}

@@ -1,0 +1,32 @@
+.thankYouPage {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 0 2rem;
+
+  &.small2 {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+
+    .continueButton {
+      margin-top: 0;
+      margin-bottom: 4rem;
+    }
+  }
+}
+
+.thankYouImage {
+  margin-bottom: 2rem;
+}
+
+.continueButton {
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.quoteFooter {
+  font-size: (12rem/16);
+  max-width: 400px;
+  margin-bottom: 1rem;
+}

@@ -1,0 +1,85 @@
+{% extends '../layouts/base.twig' %}
+{% block title %}Search{% endblock %}
+{% block revaJSLoaded %}
+  <script type="text/javascript">
+    Reva.stores.getWebSiteStore().searchStore.parseQueryFromUrl();
+  </script>
+{% endblock %}
+{% block content %}
+  <div class="contentWrapper">
+    <div class="lightHeader shadowCaster" id="header">
+      <div class="cWrapper headerBlock">
+      <div id="searchInfo">
+        <script type="text/x-twig">
+          {% verbatim %}
+            {% if storeLoading == false %}
+                <h1 class="headerText">Searching for {{ queryLabel }}</h1>
+            {% endif %}
+          {% endverbatim %}
+        </script>
+      </div>
+      <script type="text/javascript">
+        (function () {
+          Reva.ui.createSearchInfoWidget('#searchInfo');
+        }());
+      </script>
+        {% include '../parts/logo.twig' %}
+        <div class="searchBoxWrapper">
+          <div data-c="searchBoxFilterHeader" id="searchBoxFilterHeader"></div>
+          <script type="text/javascript">
+            Reva.ui.createSearchBoxFilterWidget('#searchBoxFilterHeader');
+          </script>
+          <div data-label="Back to top ↑" data-type="flat" data-w="button" id="backToTop"></div>
+        </div>
+        {% include '../parts/header-options.twig' %}
+        <div class="navLinks">{% include '../parts/navigation.twig' %}</div>
+        {% include '../parts/header-menu.twig' %}
+      </div>
+    </div>
+  
+    <div class="searchBlock">
+      <div class="bigBlock cWrapper">
+        <div class="searchInterface">
+          {% include '../parts/pageErrorWidget.twig' %}
+          <div class="searchFiltersSection">
+            {% include '../parts/searchBoxFilter.twig' %}
+            {% include '../parts/searchFilters.twig' with { 'filterId': 'searchFiltersBody' } %}
+            {% include '../parts/searchResultsList.twig' %}
+          </div>
+        </div>
+        {% include '../parts/searchMap.twig' %}
+        <script type="text/javascript">
+          (function () {
+            var THRESHOLD = 16;
+            var getScrollingElement = Reva.utils.getScrollingElement;
+            document.addEventListener('DOMContentLoaded', function () { // will take the user back to top
+              var btnBackToTop = document.querySelector('#backToTop');
+              btnBackToTop.addEventListener('click', function () {
+                getScrollingElement().scrollTop = 0;
+              });
+              var map = document.querySelector('#revaMap');
+              var header = document.querySelector('#header');
+              var checkScrollPosition = Reva.utils.debounce(function () {
+                var scrollTop = getScrollingElement().scrollTop;
+                var searchVisibleThreshold = scrollTop > 80;
+                header.setAttribute('data-search-visible', searchVisibleThreshold);
+              }, THRESHOLD);
+
+              var putMapInPosition = function putMapInPosition() {
+                var pos = window.innerWidth - 1440;
+                pos = pos > 0 ? pos / 2 : 0;
+                map.style.right = "".concat(pos, "px");
+              };
+
+              putMapInPosition();
+              checkScrollPosition();
+              window.addEventListener('resize', putMapInPosition);
+              window.addEventListener('scroll', checkScrollPosition);
+            });
+          }());
+        </script>
+      </div>
+    </div>
+    
+  </div>
+{% endblock %}

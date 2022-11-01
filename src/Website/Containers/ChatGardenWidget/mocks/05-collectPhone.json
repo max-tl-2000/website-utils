@@ -1,0 +1,56 @@
+{
+  "Messages": {
+      "Message": [],
+      "version": "1.0"
+  },
+  "name": "ScheduleTour",
+  "Objects": [
+      {
+          "currentStep": "CollectPhone",
+          "currentStepNumber": 1,
+          "totalSteps": 7,
+          "rule": "ScheduleTour",
+          "workflowName": "ScheduleTour",
+          "step": {
+              "conversationContext": "What’s your phone number?",
+              "textBox": [
+                  {
+                      "displayVariable": [
+                          {
+                              "name": "PROSPECT_PHONE",
+                              "format": "INTERNATIONAL"
+                          }
+                      ],
+                      "button": [
+                          {
+                              "conversationConsumer": "$PROSPECT_PHONE",
+                              "displayText": "Submit phone number",
+                              "nullDisplayText": "Submit phone number",
+                              "style": "primary",
+                              "targetStep": "CollectPhone",
+                              "order": 1
+                          }
+                      ],
+                      "isRequired": true,
+                      "isMultiLine": false,
+                      "emptyText": "Phone number",
+                      "validationType":"phone",
+                      "style": "primary",
+                      "storeField": "phone",
+                      "order": 1
+                  }
+              ],
+              "totalSteps": 7,
+              "nextStep": "CollectMoveInDate",
+              "stepNumber": 1,
+              "tertiaryButton": [
+                  {
+                      "conversationConsumer": "Please take me back to the beginning",
+                      "displayText": "Cancel tour",
+                      "targetStep": "home"
+                  }
+              ]
+          }
+      }
+  ]
+}

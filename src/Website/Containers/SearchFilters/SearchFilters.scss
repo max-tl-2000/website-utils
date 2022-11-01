@@ -1,0 +1,76 @@
+@import '../../../scss/_colors';
+
+.searchFilters {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: (20rem/16) (25rem/16);
+
+  flex-wrap: wrap;
+
+  .filterTitle {
+    font-weight: 500;
+    margin-bottom: 1em;
+  }
+
+  .filterLabel {
+    font-size: (14rem/16);
+    color: rgba($black, .87);
+  }
+
+  .priceFilter {
+    width: (150rem/16);
+    margin-bottom: 1.5rem;
+
+    order: 1;
+  }
+
+  .floorplanTypeFilter {
+    width: (150rem/16);
+    margin-bottom: 1.5rem;
+
+    order: -1;
+  }
+
+  .lifestylesFilter {
+    flex: 1;
+    min-width: (280rem/16);
+    max-width: (420rem/16);
+    margin-bottom: 1.5rem;
+
+    order: 2;
+  }
+
+  &.verticalMenu {
+    flex-direction: column;
+    padding: 0 (20rem/16);
+
+    .filterTitle {
+      font-weight: 400;
+      color: $white;
+    }
+
+    .lifestylesFilter {
+      min-width: auto;
+      max-width: auto;
+    }
+  }
+}
+
+.xsmall2 {
+  .searchFilters {
+    flex-wrap: unset;
+  }
+
+  .floorplanTypeFilter {
+    order: unset;
+  }
+
+  .lifestylesFilter {
+    order: unset;
+  }
+
+  .priceFilter {
+    order: unset;
+  }
+}

@@ -1,0 +1,14 @@
+<script type="text/javascript">
+if(/Trident.*:/.test(navigator.userAgent)) {
+  var html = document.querySelector('html');
+  html.setAttribute('data-browser','msie11');
+  document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/mobx/4.9.4/mobx.umd.min.js"><\/script>');
+}
+if(/Edge/.test(navigator.userAgent)) {
+  var html = document.querySelector('html');
+  html.setAttribute('data-browser','edge');
+}
+
+window._reva_tenant_logo_url = '{{ tenantLogoURL }}';
+</script>
+<script type="text/javascript" src="{{jsResource}}" ></script>

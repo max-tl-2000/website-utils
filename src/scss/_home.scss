@@ -1,0 +1,297 @@
+$minHeroBlockHeight: 600px;
+
+body[data-scrolled='true'] {
+  .homeHeader {
+    background: rgba(0,0,0,.3);
+  }
+}
+
+.homeHeader {
+  z-index: 2;
+  transition: background .5s ease-out;
+  background: rgba(0,0,0,0);
+
+  &.menuOpen {
+    background: rgba(0,0,0,.2);
+  }
+}
+
+#searchBox {
+  width: 88vw;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.contentWrapperHome {
+  position: relative;
+}
+
+.contentWrapper {
+  position: relative;
+  padding-top: (56rem/16); /* compensate for fixed header  */
+
+  [data-medium='true'] & {
+    padding-top: (100rem/16);
+  }
+}
+
+.blockWrapper > h2,
+.blockWrapper > h1 {
+  text-align: center;
+  color: #fff;
+}
+
+.blockWrapper .tagline {
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 40px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.blockWrapper > h1 {
+  font-size: 45px;
+  line-height: 1.1em;
+  margin-top: -2em;
+  margin-bottom: 20px;
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+
+[data-small2='true'] {
+  .blockWrapper > h1 {
+    font-size: 75px;
+  }
+}
+
+.heroWrapper {
+  background-position: center;
+  background-size: cover;
+
+  .bgVideo {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    min-height: $minHeroBlockHeight;
+
+    [data-component='bg-video'] {
+      height: 100vh;
+      min-height: $minHeroBlockHeight;
+    }
+  }
+
+  .content {
+    position: relative;
+    height: 100vh;
+    min-height: $minHeroBlockHeight;
+  }
+
+  .blockWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    min-height: $minHeroBlockHeight;
+  }
+
+  #searchSection {
+    &[data-visible='true'] {
+      display: flex;
+    }
+
+    &[data-visible='false'] {
+      display: none;
+    }
+  }
+
+  #marketsNavigation {
+    margin-top: (40rem/16);
+  }
+}
+
+.homeArrowDown {
+  position: absolute;
+  bottom: 20px;
+  left: calc(50% - 17px);
+  display: block;
+  width: 34px;
+  height: 34px;
+  animation: fadeIn .5s ease-out;
+}
+
+.reva_homeLink {
+  position: absolute;
+  bottom: (70rem/16);
+  left: 0;
+  width: 100%;
+  padding: (12rem/16);
+  cursor: pointer;
+  text-align: center;
+  text-transform: uppercase;
+
+  p {
+    font-size: (14rem/16);
+    font-weight: 500;
+    line-height: (21rem/16);
+    color: white;
+    text-shadow: 0 3px 8px rgba(0, 0, 0, .65);
+  }
+}
+
+.markets-overlay-section {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  min-height: $minHeroBlockHeight;
+  pointer-events: auto;
+  background: rgba(52, 52, 52, .65);
+
+  [data-browser='msie11'] & {
+    height: 100vh; // IE11 does not support viewport units in min-height
+  }
+
+  .reva_homeLink {
+    [data-xsmall1='true'] & {
+      bottom: 0;
+    }
+
+    [data-xsmall2='true'] & {
+      bottom: (2rem/16);
+    }
+
+    [data-small1='true'] & {
+      bottom: (20rem/16);
+    }
+
+    [data-small2='true'] & {
+      bottom: (30rem/16);
+    }
+  }
+
+  .blockWrapper > h2,
+  .blockWrapper > h1 {
+    [data-xsmall1='true'] & {
+      display: none;
+    }
+
+    [data-xsmall2='true'] & {
+      display: block;
+    }
+  }
+}
+
+.homeArrowDown:after {
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  content: ' ';
+}
+
+.homeHeader .navigationLinks {
+  width: 100%;
+
+  a {
+    color: #fff;
+  }
+}
+
+.tiles {
+  display: none;
+
+  flex-wrap: wrap;
+
+  .box {
+    width: 50%;
+    padding: 20px 80px 30px;
+  }
+}
+
+[data-small2='true'] {
+  .tiles {
+    display: flex;
+  }
+
+  .home_smallLayout {
+    display: none;
+  }
+}
+
+// TODO: .box styles are not used in the website so this should be removed from here
+
+.box {
+  min-height: 430px;
+  padding: 10px 30px 40px;
+  text-align: center;
+
+  & p {
+    line-height: 31px;
+  }
+
+  .homeTitle {
+    font-size: 44px;
+
+    &:before {
+      display: block;
+      width: 50px;
+      height: 6px;
+      margin: 0 auto 15px;
+      content: ' ';
+      background: #4864f7;
+    }
+  }
+}
+
+.block-investors {
+  position: relative;
+  min-height: 430px;
+  text-align: center;
+
+  & h2 {
+    font-size: 44px;
+    font-weight: bold;
+    margin-top: 0rem;
+    margin-bottom: 2.5rem;
+  }
+
+  & p {
+    line-height: 31px;
+    margin-bottom: 3rem;
+  }
+
+  & a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fff;
+  }
+}
+
+[data-small1='true'] {
+  .block-investors {
+    text-align: left;
+
+    & h2 {
+      margin-top: 2rem;
+    }
+  }
+}
+
+.investorsWrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(72, 100, 247, .87);
+}
+
+.textWrapper {
+  position: relative;
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 50px 40px;
+  color: #fff;
+}

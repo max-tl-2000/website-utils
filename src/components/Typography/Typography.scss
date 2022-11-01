@@ -1,0 +1,182 @@
+@import '../../scss/_common.scss';
+$error: #ff1744;
+$errorOnDarkBg: #ff6886fa;
+$highlight: #00bfa5;
+$highlightOnDarkBg: #00bfa5;
+$linkColor: #2196f3;
+$linkColorLighter: #99daf8;
+
+.textElement {
+  font-family: vars(--reva-typography-font-family, 'Lato');
+  margin: 0;
+
+  &.noRaw {
+    font-weight: 400;
+    line-height: 1.2em;
+    margin-bottom: .625em;
+
+    &.noMargin {
+      margin-bottom: 0;
+    }
+  }
+
+  &.block {
+    display: block;
+  }
+
+  &.uppercase {
+    text-transform: uppercase;
+  }
+
+  &.breakAll {
+    word-break: break-all;
+  }
+
+  &.clampLines {
+    display: -webkit-box;
+    overflow: hidden;
+
+    -webkit-box-orient: vertical;
+  }
+
+  &.breakWord {
+    word-break: break-word;
+  }
+
+  &.justify {
+    text-align: justify;
+  }
+
+  &.primary {
+    color: vars(--reva-global-text-primary-color, rgba(0, 0, 0, .87));
+  }
+
+  &.secondary {
+    color: vars(--reva-global-text-secondary-color, rgba(0, 0, 0, .54));
+  }
+
+  &.clickable {
+    color: vars(--reva-global-text-link-color, $linkColor);
+  }
+
+  &.lighterForeground {
+    &.primary {
+      color: vars(--reva-global-text-primary-color-lf, #fff);
+    }
+
+    &.secondary {
+      color: vars(--reva-global-text-secondary-color-lf, rgba(255, 255, 255, .80));
+    }
+
+    &.disabled {
+      cursor: not-allowed;
+      color: vars(--reva-global-text-disabled-color-lf, rgba(255, 255, 255, .54));
+    }
+
+    &.highlight {
+      color: vars(--reva-global-text-highlighted-color-lf, $highlightOnDarkBg);
+    }
+
+    &.underline {
+      text-decoration: underline;
+    }
+
+    &.error {
+      color: vars(--reva-global-text-error-color-lf, $error);
+    }
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+    color: vars(--reva-global-text-disabled-color, rgba(0, 0, 0, .27));
+  }
+
+  &.highlight {
+    color: vars(--reva-global-text-highlighted-color, $highlight);
+  }
+
+  &.error {
+    color: vars(--reva-global-text-error-color, $error);
+  }
+
+  &.ellipsis {
+    // needed to avoid letters that go outside of the base line to appear as cut
+    line-height: initial;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  &.bold {
+    font-weight: 600;
+  }
+
+  &.italic {
+    font-style: italic;
+  }
+
+  &.clickable {
+    cursor: pointer;
+  }
+
+  &.Link {
+    cursor: pointer;
+    color: vars(--reva-global-text-link-color, $linkColor);
+  }
+}
+
+.Link {
+  cursor: pointer;
+  color: vars(--reva-global-text-link-color, $linkColor);
+
+  > &.textElement {
+    color: vars(--reva-global-text-link-color, $linkColor);
+
+    &:hover {
+      color: vars(--reva-global-text-link-color-hover, fade($linkColor, 87%));
+    }
+  }
+
+  &:hover {
+    color: vars(--reva-global-text-link-color-hover, fade($linkColor, 87%));
+  }
+
+  &.lighterForeground {
+    color: vars(--reva-global-text-link-color-lf, $linkColorLighter);
+
+    > &.textElement {
+      color: vars(--reva-global-text-link-color-lf, $linkColorLighter);
+
+      &:hover {
+        color: vars(--reva-global-text-link-color-hover-lf, fade($linkColorLighter, 87%));
+      }
+    }
+
+    &:hover {
+      color: vars(--reva-global-text-link-color-hover-lf, fade($linkColorLighter, 87%));
+    }
+  }
+}
+
+.Text {
+  font-family: vars(--reva-typography-text-font-family, --reva-typography-font-family, 'Lato');
+  font-size: 1rem;
+  font-size: var(--reva-typography-text-font-size, 1rem);
+}
+
+.Header {
+  font-family: vars(--reva-typography-header-font-family, --reva-typography-font-family, 'Lato');
+  font-size: var(--reva-typography-header-font-size, (24rem/16));
+  font-weight: 600;
+}
+
+.Title {
+  font-family: vars(--reva-typography-title-font-family, --reva-typography-font-family, 'Lato');
+  font-size: var(--reva-typography-title-font-size, (18rem/16));
+  font-weight: 600;
+}
+
+.Caption {
+  font-family: vars(--reva-typography-caption-font-family, --reva-typography-font-family, 'Lato');
+  font-size: var(--reva-typography-caption-font-size, (14rem/16));
+}

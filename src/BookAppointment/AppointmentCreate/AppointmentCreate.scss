@@ -1,0 +1,24 @@
+.dateTimeSelectorFooter {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: .25em;
+  border-top: 1px solid rgba(0,0,0, .12);
+}
+
+.continueButton {
+  margin-top: 2.5em;
+}
+
+.lastStep {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 500px;
+}
+
+.user-activity-warning {
+  padding-right: (32rem/16);
+  padding-left: (32rem/16);
+}

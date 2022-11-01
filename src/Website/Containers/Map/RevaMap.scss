@@ -1,0 +1,23 @@
+@import '../../../scss/_placeholder';
+
+.Map {
+  width: 100%;
+  height: 100%;
+
+  // This is a direct css patch to google maps and as such it might break in the future.
+  // We need this because we are using the RichMarker class to create the property poi markers and these
+  // are added to google maps on a different <div> layer than the defaul Marker class. This layer is higher
+  // in the z-index than the "Use ctrl + scroll to zoom the map" overlay message. This will allow for the
+  // overlay to be drawn on top of the property poi markers.
+  // https://stackoverflow.com/questions/41901580/how-to-style-google-maps-prompt-use-two-fingers-to-move-the-map-for-mobile-de
+  // https://github.com/gmaps-marker-clusterer/gmaps-marker-clusterer/issues/34
+
+  :global(.gm-style-pbc) {
+    z-index: 5 !important;
+    pointer-events: none;
+  }
+
+  &.loading {
+    @include loading-placeholder-dark;
+  }
+}

@@ -1,0 +1,18 @@
+/*
+ * Copyright (c) 2022 Reva Technology Inc., all rights reserved.
+ * Unauthorized copying of this file, via any medium is strictly prohibited
+ * Licensed under the Elastic License 2.0; you may not use this file except
+ * in compliance with the Elastic License 2.0.
+ */
+
+import { renderComponent } from '../common/render-helper';
+import AppSettingsForm, { createRoot } from '../Website/Containers/AppSettingsForm/AppSettingsForm';
+import AppSettings from '../Models/AppSettings';
+
+export const renderSettingsUI = defaults => {
+  const root = createRoot();
+
+  const appSettings = new AppSettings(defaults);
+
+  renderComponent(AppSettingsForm, { selector: root, stores: { appSettings } });
+};

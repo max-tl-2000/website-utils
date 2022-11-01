@@ -1,0 +1,28 @@
+.ContactForm {
+  .selectedDateTimeLabel {
+    font-size: (18rem/16);
+    line-height: 1.4em;
+    margin-bottom: 20px;
+    margin-left: 3px;
+  }
+
+  .content {
+    overflow: auto;
+    padding: 24px 30px 44px 30px;
+
+    -webkit-overflow-scrolling: touch;
+  }
+
+  &.compact {
+    .content {
+      max-height: calc(100vh - 210px);
+      padding: 1rem 24px 30px;
+    }
+
+    .selectedDateTimeLabel {
+      font-size: (14rem/16);
+      line-height: 1.2em;
+      margin-bottom: 1rem;
+    }
+  }
+}

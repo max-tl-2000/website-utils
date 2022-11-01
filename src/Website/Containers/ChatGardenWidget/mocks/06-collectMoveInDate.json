@@ -1,0 +1,66 @@
+{
+    "Messages": {
+        "Message": [],
+        "version": "1.0"
+    },
+    "name": "ScheduleTour",
+    "Objects": [
+        {
+            "currentStep": "CollectMoveInDate",
+            "currentStepNumber": 4,
+            "totalSteps": 7,
+            "rule": "ScheduleTour",
+            "workflowName": "ScheduleTour",
+            "step": {
+                "conversationContext": "When do you plan to move in?",
+                "button": [
+                    {
+                        "conversationConsumer": "I plan to move within the next 4 weeks.",
+                        "displayText": "NEXT 4 WEEKS",
+                        "style": "secondary",
+                        "storeField": "NEXT_4_WEEKS",
+                        "order": 1
+                    },
+                    {
+                        "conversationConsumer": "I plan to move within the next 2 months",
+                        "displayText": "NEXT 2 MONTHS",
+                        "style": "secondary",
+                        "storeField": "NEXT_2_MONTHS",
+                        "order": 2
+                    },
+                    {
+                        "conversationConsumer": "I plan to move within the next 4 months",
+                        "displayText": "NEXT 4 MONTHS",
+                        "style": "secondary",
+                        "storeField": "NEXT 4 MONTHS",
+                        "order": 3
+                    },
+                    {
+                        "conversationConsumer": "I plan to move no sooner than in 4 months",
+                        "displayText": "BEYOND 4 MONTHS",
+                        "style": "secondary",
+                        "storeField": "BEYOND_4_MONTHS",
+                        "order": 4
+                    },
+                    {
+                        "conversationConsumer": "I'm not sure when I'll be moving.",
+                        "displayText": "I DONT KNOW",
+                        "style": "secondary",
+                        "storeField": "I_DONT_KNOW",
+                        "order": 5
+                    }
+                ],
+                "totalSteps": null,
+                "nextStep": "ConfirmAppointment",
+                "stepNumber": 4,
+                "tertiaryButton": [
+                    {
+                        "conversationConsumer": "Please take me back to the beginning",
+                        "displayText": "Cancel tour",
+                        "targetStep": "home"
+                    }
+                ]
+            }
+        }
+    ]
+}

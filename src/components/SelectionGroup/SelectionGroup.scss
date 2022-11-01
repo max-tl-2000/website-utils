@@ -1,0 +1,12 @@
+.SelectionGroup {
+  display: inline-block;
+
+  &.hasCols {
+    display: block;
+  }
+}
+
+.item {
+  display: inline-block;
+  vertical-align: top;
+}

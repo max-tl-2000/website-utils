@@ -1,0 +1,259 @@
+@import '../../../scss/_colors.scss';
+
+.PropertyCard {
+  position: relative;
+  box-sizing: border-box;
+  min-height: (390rem / 16);
+  padding-bottom: .2rem;
+  cursor: pointer;
+  border-radius: (5rem / 16);
+  background: #fff;
+  box-shadow: 0rem (2rem/16) (2rem/16) rgba($black, .24), 0rem 0rem (2rem/16) rgba($black, .12);
+
+  & * {
+    box-sizing: border-box;
+  }
+
+  &.highlight {
+    box-shadow: 0rem (4rem/16) (4rem/16) rgba($black, .24), 0rem 0rem (2rem/16) rgba($black, .12);
+  }
+
+  &.selected {
+    box-shadow: 0rem (8rem/16) (8rem/16) rgba($black, .24), 0rem 0rem (2rem/16) rgba($black, .12);
+  }
+}
+
+.propertyImageContainer {
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  width: 100%;
+  height: (238rem / 16);
+  border-radius: (5rem / 16) (5rem / 16) 0 0;
+}
+
+.propertyImageContainer .blurBackground {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  width: 100%;
+  min-height: (48rem / 16);
+  padding-top: .6rem;
+  padding-bottom: .6rem;
+  background-image: inherit;
+  background-position: inherit;
+  background-size: inherit;
+}
+
+.propertyImageContainer .blurBackground::before {
+  position: absolute;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  content: ' ';
+  background-image: inherit;
+  background-position: inherit;
+  background-size: inherit;
+
+  -webkit-filter: blur((6rem / 16));
+  -moz-filter: blur((6rem / 16));
+  -o-filter: blur((6rem / 16));
+  -ms-filter: blur((6rem / 16));
+  filter: blur((6rem / 16));
+}
+
+.propertyImageContainer .blurBackground::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: ' ';
+}
+
+.testimonialContainer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.propertyImageContainer .blurBackground .testimonial {
+  font-size: (13rem / 16);
+  font-weight: 500;
+  line-height: (17rem / 16);
+  position: relative;
+  margin: 0 (14rem / 16);
+  padding-left: 25px;
+  color: rgba(0, 0, 0, .87);
+
+  &:before {
+    font-size: (50rem/16);
+    line-height: 1rem;
+    position: absolute;
+    top: (11rem/16);
+    left: 0;
+    display: block;
+    content: '“';
+    color: #7c7d7d;
+  }
+}
+
+.testimonialMask {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: .65;
+  background-color: #fff;
+}
+
+.propertyImage {
+  width: 100%;
+  height: 100%;
+}
+
+.tourContainer {
+  position: absolute;
+  top: (20rem / 16);
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: (96rem / 16);
+  height: (40rem / 16);
+  cursor: pointer;
+  color: rgba(0, 0, 0, .54);
+  border-radius: (5rem / 16) 0 0 (5rem / 16);
+  background: rgba(255, 255, 255, .65);
+  box-shadow: 0 (2rem / 16) (2rem / 16) rgba(0, 0, 0, .24);
+
+  .tour {
+    font-size: (12rem / 16);
+    font-weight: 500;
+    margin: (2rem /16) 0 0 0;
+    padding: 0 (8rem / 16) 0 (6rem / 16);
+    text-transform: uppercase;
+    color: inherit;
+  }
+
+  .tourIcon {
+    width: (18rem / 16);
+    height: (18rem / 16);
+
+    fill: rgba(0, 0, 0, .54);
+  }
+}
+
+.tourContainer:hover {
+  color: rgba(0, 0, 0, .87);
+
+  .tourIcon {
+    fill: rgba(0, 0, 0, .87);
+  }
+}
+
+.tourContainer:visited {
+  color: rgba(0, 0, 0, .87);
+
+  .tourIcon {
+    fill: rgba(0, 0, 0, .87);
+  }
+}
+
+.propertyName {
+  font-size: (24rem / 16);
+  font-weight: 400;
+  line-height: (24rem / 16);
+  padding: (10rem / 16);
+}
+
+.propertyInfo {
+  position: absolute;
+  bottom: .5rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 100%;
+  padding: 0 (10rem / 16);
+
+  .propertyDescription {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    text-align: left;
+  }
+
+  .propertyContactInfo {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    text-align: right;
+  }
+
+  .descriptionItem {
+    font-size: (12rem / 16);
+    overflow: hidden;
+    margin-bottom: (6rem / 16);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .bold {
+    font-weight: 600;
+  }
+
+  .empty {
+    visibility: hidden;
+  }
+
+  .phoneContainer {
+    display: flex;
+    flex-direction: row-reverse;
+
+    .phoneIconContainer {
+      position: relative;
+
+      .phoneIcon {
+        position: absolute;
+        top: (-1rem / 16);
+        right: (2rem /16);
+        width: (16rem / 16);
+        height: (16rem / 16);
+
+        fill: rgba(0, 0, 0, .87);
+      }
+    }
+  }
+}
+
+.propertyBookmarkImage {
+  position: absolute;
+  top: (-13rem / 16);
+  left: (2rem / 16);
+  width: (34rem / 16);
+  height: (43rem / 16);
+}
+
+.propertyBookmarkLabel {
+  font-size: (12rem / 16);
+  font-weight: bold;
+  position: absolute;
+  top: (-3rem / 16);
+  color: white;
+
+  &.centered {
+    left: (15rem / 16);
+  }
+
+  &.offset {
+    left: (11rem / 16);
+  }
+
+  &.highlight {
+    color: $deepBlue;
+  }
+}

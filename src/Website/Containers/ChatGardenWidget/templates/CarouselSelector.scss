@@ -1,0 +1,43 @@
+.display {
+  padding: 12px 48px;
+  text-align: center;
+}
+
+.carousel-title {
+  font-weight: 500;
+  line-height: 28px;
+  margin: 0;
+
+  size: 20px;
+}
+
+.carousel-subtitle {
+  font-weight: 300;
+  line-height: 20px;
+  margin: 4px 0;
+  color: #0008aa;
+
+  size: 13px;
+}
+
+.cdSplider {
+  button {
+    top: auto;
+    bottom: 4%;
+
+    &:disabled {
+      cursor: default;
+      opacity: .1;
+    }
+  }
+}
+
+.csSplidefloorPlan {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.cdSplideImage {
+  background-size: cover;
+}

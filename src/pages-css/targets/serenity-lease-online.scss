@@ -1,0 +1,36 @@
+@import '../../scss/colors';
+@import '../colors/serenity-colors.scss';
+
+html body [data-id='marketingLayoutUnitCard'][data-unit-highlighted='true'] {
+  background: $accentColor !important;
+
+  p {
+    color: $white;
+  }
+
+  [data-id='availableDate'] {
+    color: $white;
+  }
+
+  [data-id='innerCardDivider'] {
+    background: rgba($white, .3);
+  }
+}
+
+html body [data-id='marketingLayoutUnitCard'][data-unit-highlighted='true']:active,
+html body [data-id='marketingLayoutUnitCard'][data-unit-highlighted='true'][data-selected='true'] {
+  background: $accentColor !important;
+
+  &:hover {
+    background: $accentColor !important;
+  }
+}
+
+html body [data-id='marketingLayoutUnitCard'][data-unit-highlighted='true']:hover {
+  background: $accentColorHover !important;
+
+  [data-id='apartmentNumberContainer'] > p,
+  [data-id='amenitiesList'] {
+    color: $white;
+  }
+}

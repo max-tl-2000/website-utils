@@ -1,0 +1,103 @@
+.Page {
+  overflow: auto;
+  max-height: calc(100vh - 125px);
+  padding-top: .5rem;
+
+  &.small1 {
+    .Buttons {
+      > [data-component='button'] {
+        margin-right: 1rem;
+        margin-bottom: unset;
+
+        &:last-of-type {
+          margin-right: 0;
+          margin-bottom: unset;
+        }
+      }
+    }
+  }
+
+  &.small2 {
+    .Header {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+
+      flex-wrap: wrap;
+    }
+
+    .Description {
+      flex: 1;
+      margin-bottom: unset;
+      padding-right: (24rem/16);
+    }
+
+    .Buttons {
+      width: 420px;
+      padding-top: 0;
+
+      &.noTour {
+        width: 250px;
+      }
+    }
+  }
+
+  .tourButton {
+    &.thin {
+      padding: (8rem/16) (15rem/16);
+    }
+  }
+
+  .amenities {
+    line-height: 1.3rem;
+    margin-bottom: 1rem;
+    color: rgba(0,0,0, .54);
+  }
+}
+
+.Header {
+  padding: 1rem (24rem/16);
+}
+
+.Description {
+  margin-bottom: .5rem;
+}
+
+.Buttons {
+  width: 100%;
+  margin-bottom: .5rem;
+  text-align: right;
+
+  > [data-component='button'] {
+    margin-bottom: .8rem;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.carousel {
+  min-height: 100px;
+  border-top: 1px solid rgba(0, 0, 0, .12);
+}
+
+.ErrorWrapper {
+  padding: 1.5rem 2rem;
+}
+
+.footerNote {
+  padding: 1rem (24rem/16) (5rem/16);
+
+  .footnote {
+    line-height: 1.35rem;
+    position: relative;
+    padding-left: 1rem;
+  }
+
+  .asterisk {
+    position: absolute;
+    top: .1rem;
+    left: 0;
+  }
+}

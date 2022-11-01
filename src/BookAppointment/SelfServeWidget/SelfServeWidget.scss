@@ -1,0 +1,8 @@
+@import '../../scss/reset';
+
+.SelfServeWidget {
+  @include root();
+
+  max-width: 967px;
+  user-select: none;
+}

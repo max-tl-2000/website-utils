@@ -1,0 +1,18 @@
+.poiToggleBtn {
+  font-size: (18rem/16);
+  width: (225rem/16);
+  height: (40rem/16);
+  margin: (10rem/16) 0 (5rem/16) (10rem/16);
+  padding: 0 (17rem/16);
+  cursor: pointer;
+  color: rgb(86, 86, 86);
+  border: none;
+  border-radius: (2rem/16);
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, .3) 0 (1rem/16) (4rem/16) (-1rem/16);
+
+  &:hover {
+    color: black;
+    background-color: #ebebeb;
+  }
+}

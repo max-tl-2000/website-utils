@@ -1,0 +1,23 @@
+.filterableList {
+  display: inline-block;
+
+  &.wide {
+    display: block;
+  }
+}
+
+.item-text-container,
+.no-match-text {
+  margin-top: (14rem/16);
+  margin-bottom: (4rem/16);
+  padding-left: (15rem/16);
+}
+
+.item-text,
+.no-match-text {
+  font-size: (13rem/16);
+}
+
+.filter {
+  display: block;
+}

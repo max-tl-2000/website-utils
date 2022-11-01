@@ -1,0 +1,290 @@
+@import '../../scss/_colors.scss';
+@import '../../scss/_common.scss';
+@mixin generateTextAlignClasses($items) {
+  @each $item in $items {
+    &.#{$item} {
+      text-align: $item;
+    }
+  }
+}
+
+.TextBox {
+  display: inline-block;
+  box-sizing: border-box;
+  outline: none;
+
+  & * {
+    box-sizing: border-box;
+  }
+
+  &.disabled {
+    .Wrapper {
+      border: (1rem/16) solid vars(--reva-global-control-border-color-disabled, #e0e0e0);
+    }
+  }
+
+  .Wrapper {
+    position: relative;
+    display: inline-block;
+    border: (1rem/16) solid vars(--reva-global-control-border-color, #e0e0e0);
+    border-radius: (3rem/16);
+    background: vars(--reva-global-control-bg, #fff);
+
+    &.focused {
+      box-shadow: unset;
+
+      [data-input-method='keyboard'] & {
+        @include focusOutlineProps();
+      }
+    }
+
+    &.error {
+      @include errorOutlineProps();
+    }
+
+    &.multiline {
+      textarea {
+        width: 100%;
+        max-width: 100%;
+        min-height: (60rem/16);
+        border: none;
+
+        [data-browser='msie11'] & {
+          overflow: auto;
+        }
+      }
+    }
+
+    &.noBorder {
+      border: none;
+    }
+  }
+
+  .error {
+    margin-top: (8rem/16);
+    text-align: left;
+
+    &.alignRightErrorMsg {
+      text-align: right;
+    }
+  }
+
+  input,
+  textarea {
+    @include generateTextAlignClasses((left, center, right));
+
+    font-family: vars(--reva-global-control-font-family, --reva-typography-font-family, 'Lato');
+    font-size: vars(--reva-global-control-font-size, (15rem/16));
+    font-weight: vars(--reva-global-control-font-weight, 300);
+    padding: .885rem 1.5rem .745rem;
+    color: vars(--reva-global-control-color, #000);
+    border: none;
+
+    -webkit-appearance: none;
+
+    [data-browser='edge'] & {
+      margin: 1px;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &.disabled {
+      cursor: text;
+      background: $white;
+    }
+  }
+
+  &.small {
+    input,
+    textarea {
+      font-size: vars(--reva-global-control-font-size-small, (12rem/16));
+      padding: (4rem/16) (10rem/16);
+    }
+  }
+
+  &.wide {
+    display: block;
+
+    .Wrapper {
+      display: block;
+
+      [data-browser='msie11'] & {
+        padding: .05px;
+      }
+    }
+
+    input {
+      display: block;
+      width: 100%;
+
+      [data-browser='edge'] & {
+        width: 99%;
+        height: 99%;
+      }
+    }
+
+    textarea {
+      [data-browser='edge'] & {
+        max-width: 98%;
+      }
+    }
+  }
+
+  input::-webkit-input-placeholder {
+    opacity: 1;
+    color: vars(--reva-global-control-placeholder-color, #919191);
+  }
+
+  input::-moz-placeholder {
+    opacity: 1;
+    color: vars(--reva-global-control-placeholder-color, #919191);
+  }
+
+  input::-ms-input-placeholder {
+    opacity: 1;
+    color: vars(--reva-global-control-placeholder-color, #919191);
+  }
+
+  textarea::-webkit-input-placeholder {
+    opacity: 1;
+    color: vars(--reva-global-control-placeholder-color, #919191);
+  }
+
+  textarea::-moz-placeholder {
+    opacity: 1;
+    color: vars(--reva-global-control-placeholder-color, #919191);
+  }
+
+  textarea::-ms-input-placeholder {
+    opacity: 1;
+    color: vars(--reva-global-control-placeholder-color, #919191);
+  }
+
+  &.lighterPlaceholder {
+    input::-webkit-input-placeholder {
+      opacity: .6;
+      color: vars(--reva-global-control-placeholder-color, #919191);
+    }
+
+    input::-moz-placeholder {
+      opacity: .6;
+      color: vars(--reva-global-control-placeholder-color, #919191);
+    }
+
+    input::-ms-input-placeholder {
+      opacity: .6;
+      color: vars(--reva-global-control-placeholder-color, #919191);
+    }
+
+    textarea::-webkit-input-placeholder {
+      opacity: .6;
+      color: vars(--reva-global-control-placeholder-color, #919191);
+    }
+
+    textarea::-moz-placeholder {
+      opacity: .6;
+      color: vars(--reva-global-control-placeholder-color, #919191);
+    }
+
+    textarea::-ms-input-placeholder {
+      opacity: .6;
+      color: vars(--reva-global-control-placeholder-color, #919191);
+    }
+  }
+
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button,
+  input[type=date]::-webkit-inner-spin-button,
+  input[type=date]::-webkit-outer-spin-button {
+    margin: 0;
+
+    -webkit-appearance: none;
+  }
+
+  input[type=number],
+  input[type=date] {
+    -moz-appearance: textfield;
+  }
+
+  input::-webkit-input-placeholder,
+  input::-moz-placeholder,
+  input::-ms-input-placeholder,
+  textarea::-webkit-input-placeholder,
+  textarea::-moz-placeholder,
+  textarea::-ms-input-placeholder {
+    @include generateTextAlignClasses((left, center, right));
+  }
+
+  &.showIconAffordance,
+  &.clearable {
+    textarea,
+    input {
+      padding-right: (40rem/16);
+    }
+  }
+
+  &.showIconAffordance {
+    &.iconOnLeft {
+      textarea,
+      input {
+        padding-right: 1.5rem;
+        padding-left: (40rem/16);
+      }
+
+      .affordance-holder {
+        right: unset;
+        left: 0;
+      }
+    }
+  }
+}
+
+.clear-box {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: (40rem/16);
+  height: 100%;
+  cursor: pointer;
+  animation: fadeInAndScale .3s ease-out;
+  border-top-right-radius: (3rem/16);
+  border-bottom-right-radius: (3rem/16);
+
+  &:focus {
+    @include focusOutlineProps();
+  }
+
+  &.on {
+    display: flex;
+  }
+
+  svg {
+    width: (24rem/16);
+    height: (24rem/16);
+
+    fill: vars(--reva-global-control-color-affordances, rgba(0, 0, 0, .54));
+  }
+}
+
+.affordance-holder {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: (40rem/16);
+  height: 100%;
+
+  svg {
+    width: (24rem/16);
+    height: (24rem/16);
+
+    fill: vars(--reva-global-control-color-affordances, rgba(0, 0, 0, .54));
+  }
+}

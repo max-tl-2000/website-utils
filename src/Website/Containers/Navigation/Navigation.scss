@@ -1,0 +1,76 @@
+@import '../../../scss/_colors';
+
+.navigation {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  padding: (27rem / 16) 30px;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    li {
+      list-style-type: none;
+    }
+  }
+}
+
+.footerLinks {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+
+  flex-wrap: wrap;
+
+  .column {
+    display: block;
+    width: calc(50% - 1.5rem);
+    margin-right: 1rem;
+    margin-bottom: 1.5rem;
+
+    ul li {
+      line-height: 1.5rem;
+
+      .medium & {
+        line-height: 1.7rem;
+      }
+    }
+
+    .small2 & {
+      width: calc(33.33% - 1.5rem);
+    }
+
+    .medium & {
+      width: auto;
+    }
+  }
+
+  .regionGroup {
+    margin-bottom: 1.5rem;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.container {
+  [data-component='Title'].title {
+    font-size: 19px;
+    line-height: 1.5em;
+    margin-bottom: 2rem;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .stateTitle {
+    font-size: 15px;
+    display: inline-block;
+    margin-bottom: .8rem;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,35 @@
+html.simple-pages {
+  font-family: $fontFamily;
+
+  input,
+  button,
+  textarea,
+  [data-mount-point] {
+    font-family: $fontFamily;
+  }
+
+  [data-mount-point] {
+    input,
+    button,
+    textarea {
+      font-family: $fontFamily;
+    }
+  }
+
+  [data-reva-root='true'] {
+    line-height: 1rem;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  .reva-title {
+    font-family: $titleFontFamily;
+  }
+
+  [data-w] {
+    display: inline-block;
+  }
+}

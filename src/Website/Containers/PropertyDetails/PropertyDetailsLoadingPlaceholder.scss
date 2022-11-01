@@ -1,0 +1,149 @@
+@import '../../../scss/_placeholder';
+
+.medium-layout {
+  display: none;
+  padding-right: 0;
+  padding-left: 0;
+
+  [data-medium='true'] & {
+    display: block;
+    padding-right: (66rem/16);
+    padding-left: (66rem/16);
+  }
+}
+
+.small-layout {
+  [data-medium='true'] & {
+    display: none;
+  }
+
+  > .search-box-ph {
+    width: 100%;
+    margin-bottom: (20rem/16);
+  }
+}
+
+.search-section {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: (39rem/16);
+  padding-top: (34rem/16);
+
+  flex-wrap: wrap;
+
+  > .search-box-ph {
+    width: (519rem/16);
+    margin-bottom: (10rem/16);
+  }
+
+  > .search-button-ph {
+    width: (281rem/16);
+  }
+}
+
+.search-box-ph,
+.search-button-ph,
+.line-ph {
+  @include loading-placeholder-dark;
+}
+
+.search-box-ph,
+.search-button-ph, {
+  height: (40rem/16);
+}
+
+.content-section {
+  display: flex;
+  justify-content: space-between;
+
+  > .property-details-info,
+  .property-contact-data {
+    width: 100%;
+  }
+}
+
+.line-ph {
+  width: (281rem/16);
+  height: (15rem/16);
+  margin-bottom: (12rem/16);
+}
+
+.property-details-info {
+  > .line-ph:last-child {
+    width: (498rem/16);
+  }
+
+  > .explore-map-section {
+    display: flex;
+
+    > .line-ph:last-child {
+      width: (130rem/16);
+      margin-left: (20rem/16);
+    }
+  }
+}
+
+.property-contact-data {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  padding-top: (26rem/16);
+
+  > .line-ph {
+    width: (175rem/16);
+  }
+
+  > .links-section {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: (175rem/16);
+
+    flex-wrap: wrap;
+
+    > .line-ph {
+      flex-basis: 47%;
+    }
+  }
+}
+
+.property-detail-actions {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 1rem 0;
+
+  flex-wrap: wrap;
+
+  .line-ph {
+    width: (122rem/16);
+    margin-bottom: (20rem/16);
+  }
+
+  .line-ph:nth-child(2) {
+    width: (120rem/16);
+  }
+
+  .line-ph:nth-child(3) {
+    width: (70rem/16);
+  }
+
+  [data-xsmall2='true'] & {
+    justify-content: space-between;
+    flex-direction: row;
+  }
+}
+
+.line-ph {
+  &.phoneLine {
+    margin: 0 auto;
+    margin-top: (20rem/16);
+    margin-bottom: 1.5rem;
+  }
+}
+
+.details-info {
+  > .line-ph:last-child {
+    width: (320rem/16);
+  }
+}

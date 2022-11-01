@@ -1,0 +1,59 @@
+.PrimaryQuestion {
+  margin-bottom: (2rem/16);
+}
+
+.FieldWrapper {
+  &.indent {
+    padding-left: 16px;
+  }
+
+  &.level2 {
+    min-height: 42px;
+  }
+}
+
+.QuestionDescription {
+  margin-top: 1rem;
+
+  > [data-component='Caption'] {
+    color: rgba(0,0,0, .54);
+  }
+}
+
+.FollowUpQuestion {
+  display: block;
+
+  &.level2 {
+    margin-top: -.6rem;
+  }
+}
+
+.QuestionContainer {
+  display: block;
+
+  &.hasFollowUpQuestion {
+    margin-bottom: 1rem;
+  }
+}
+
+.Binary {
+  > div {
+    flex-wrap: unset;
+
+    > div {
+      margin-right: .8rem;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.Count {
+  max-width: 120px;
+
+  .dropdown {
+    padding: 0 8px 0 11px;
+  }
+}

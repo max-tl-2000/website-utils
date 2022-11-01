@@ -1,0 +1,66 @@
+.formHeader {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: (24rem/16) (24rem/16) 0;
+
+  flex-wrap: wrap;
+  flex-wrap: wrap;
+
+  .bigTitle {
+    font-size: (44rem/16);
+    margin-bottom: 1rem;
+  }
+
+  &.small1 {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: (24rem/16) (56rem/16) (24rem/16) (24rem/16);
+  }
+
+  &.noPaddingAtSides {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+.successMessage {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.dialogWrapper {
+  padding: 1.5rem;
+}
+
+.thankYouImage {
+  width: 50px;
+  height: 40px;
+  margin: 25% 0 3em 0;
+
+  path {
+    opacity: .54;
+
+    fill: black;
+  }
+}
+
+.btnClose {
+  margin-top: 36px;
+  margin-bottom: 36px;
+
+  &.hide {
+    visibility: hidden;
+  }
+}
+
+.thankYouContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 520px;
+  padding: 0 0 32px;
+}

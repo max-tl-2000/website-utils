@@ -1,0 +1,77 @@
+html,
+html input,
+html button,
+html textarea,
+html [data-mount-point],
+html [data-mount-point] input,
+html [data-mount-point] button,
+html [data-mount-point] textarea {
+  font-family: Heebo;
+}
+
+html,
+html *,
+html *:before,
+html *:after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.serifFont {
+  font-family: 'Playfair Display';
+}
+
+.data-w {
+  display: inline-block;
+}
+
+.reva-not-ready {
+  display: none;
+}
+
+.reva-ready {
+  display: block;
+}
+
+.reva-animation-enter {
+  animation: fadeIn .6s ease-out;
+}
+
+.cWrapper {
+  position: relative;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.RevaIconButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 5px;
+  background: none;
+
+  -webkit-appearance: none;
+
+  &.dark {
+    color: #fff;
+
+    &:hover {
+      background: rgba(255, 255, 255, .2);
+    }
+
+    svg {
+      fill: #fff;
+    }
+  }
+}
+
+html [data-reva-root='true'] {
+  line-height: 1rem;
+}

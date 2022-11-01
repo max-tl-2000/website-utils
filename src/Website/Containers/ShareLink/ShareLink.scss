@@ -1,0 +1,52 @@
+@import '../../../scss/_colors.scss';
+
+.ShareLink {
+  width: 100vw;
+  max-width: (619rem/16);
+  min-height: (280rem/16);
+  padding: 1.5rem 2rem;
+
+  .title {
+    font-size: (32rem/16);
+    margin-bottom: 2rem;
+  }
+
+  &.small1 {
+    min-height: (250rem/16);
+
+    .title {
+      font-size: (44rem/16);
+      margin-bottom: 3rem;
+    }
+
+    .link-copied-text {
+      width: unset;
+      margin-top: .5rem;
+      text-align: left;
+    }
+  }
+}
+
+.share-link-body {
+  display: flex;
+
+  flex-wrap: wrap;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.link-copied-text {
+  width: 100%;
+  margin-top: 1rem;
+  animation: fadeIn .3s ease-out;
+  text-align: center;
+  color: $caribbeanGreen;
+}

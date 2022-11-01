@@ -1,0 +1,276 @@
+@import '../../scss/_colors.scss';
+@import '../../scss/_common.scss';
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.date-selector {
+  position: relative;
+  display: inline-block;
+
+  &.wide {
+    display: block;
+  }
+}
+
+.direction-wrapper {
+  &.horizontal {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.selector-input-container {
+  display: block;
+}
+
+.calendar-container {
+  box-shadow: rgba($black, .2) 0 (19rem/16) (38rem/16) 0;
+
+  .yearSelector,
+  .dayOfWeek,
+  .day-number {
+    margin-bottom: 0;
+  }
+
+  .dayOfWeek {
+    font-size: 34px;
+  }
+
+  &.compact {
+    .dayOfWeek {
+      font-size: 24px;
+    }
+
+    .panel {
+      min-height: unset;
+    }
+
+    .day {
+      height: 2.3rem;
+    }
+
+    .circle {
+      height: 2.3rem;
+    }
+  }
+}
+
+.body {
+  padding: 0 (15rem/16);
+
+  &:focus {
+    outline: none;
+
+    [data-input-method='keyboard'] & {
+      @include focusOutlineProps();
+    }
+  }
+}
+
+.container {
+  background: $white;
+}
+
+.container-wrapper {
+  min-width: (324rem/16);
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.month-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: (5rem/16) (10rem/16) (2rem/16);
+}
+
+.month-container .month-text {
+  font-size: (13rem/16);
+  margin-top: (10rem/16);
+}
+
+.day {
+  position: relative;
+  width: (40rem/16);
+  height: (40rem/16);
+  margin: (1rem/16);
+
+  &.selectable {
+    cursor: pointer;
+
+    &:hover {
+      .circle {
+        transform: scale(1);
+        opacity: .2;
+      }
+    }
+
+    &.selected,
+    &.selected:hover {
+      .circle {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+    background: $whiteSmoke;
+
+    &.selected,
+    &.selected:hover {
+      .circle {
+        transform: scale(1);
+        opacity: .5;
+
+        svg {
+          fill: $grey81;
+        }
+      }
+    }
+  }
+
+  &:focus {
+    outline: none;
+
+    [data-input-method='keyboard'] & {
+      @include focusOutlineProps();
+    }
+  }
+
+  [data-component='caption'] {
+    position: relative;
+  }
+}
+
+.header {
+  padding: (10rem/16) (15rem/16);
+  background: vars(--reva-global-accent-color, $darkBlue);
+}
+
+.horizontal {
+  .header {
+    width: 135px;
+  }
+}
+
+.day-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.actions {
+  padding: (8rem/16) (10rem/16);
+  text-align: right;
+  background: $white;
+}
+
+.wrapper {
+  background: $grey50;
+}
+
+.circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: (40rem/16);
+  height: (40rem/16);
+  transition: all .15s ease-out;
+  transform: scale(0);
+  opacity: 0;
+
+  svg {
+    fill: vars(--reva-global-accent-color, $darkBlue);
+  }
+}
+
+.day-number-container {
+  line-height: 1rem;
+  position: relative;
+}
+
+.day-number-container .day-number {
+  font-size: (12rem/16);
+
+  &.blue {
+    color: vars(--reva-global-accent-color, $darkBlue);
+  }
+}
+
+.panel {
+  position: relative;
+  width: 100%;
+
+  &.exit {
+    display: none;
+  }
+
+  &.enter {
+    animation: fadeIn .5s ease-out;
+  }
+}
+
+.yearSelector {
+  font-size: (24rem/16);
+  display: inline-block;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+
+    [data-input-method='keyboard'] & {
+      @include focusOutlineProps();
+    }
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 10px;
+  min-height: 10px;
+
+  &.modal {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    transition: background .5s linear;
+    background: rgba(0, 0, 0, 0);
+
+    &.showing {
+      display: flex;
+    }
+
+    &.open {
+      background: rgba(0, 0, 0, .3);
+    }
+  }
+}
+
+.scrollable-body {
+  max-height: calc(100vh - 192px);
+
+  .horizontal & {
+    max-height: calc(100vh - 100px);
+  }
+}

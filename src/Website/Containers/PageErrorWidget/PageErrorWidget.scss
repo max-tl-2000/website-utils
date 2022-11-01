@@ -1,0 +1,26 @@
+@import '../../../scss/_common.scss';
+
+.PageErrorWidget {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: (56rem / 16);
+  opacity: .95;
+  background: vars(--reva-global-attention-note-bg, #fff59d);
+
+  .errorMessage {
+    font-size: (12rem / 16);
+    font-weight: 500;
+    line-height: (20rem / 16);
+    margin: (12rem /16) 0;
+    padding: 0 (24rem / 16);
+    letter-spacing: .01em;
+    color: vars(--reva-global-text-primary-color, rgba(black, .87));
+
+    mix-blend-mode: normal;
+  }
+
+  .reloadButton {
+    margin: 0 (25rem / 16) 0 0;
+  }
+}

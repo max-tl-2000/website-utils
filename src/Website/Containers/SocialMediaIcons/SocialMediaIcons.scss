@@ -1,0 +1,28 @@
+.socialIcons {
+  display: flex;
+  justify-content: center;
+
+  align-content: center;
+
+  button[data-component='icon-button'] {
+    margin-right: (5rem/16);
+    margin-left: (5rem/16);
+  }
+
+  svg {
+    width: 2rem;
+    height: 2rem;
+
+    stroke: none;
+    fill: #4864f7;
+  }
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: (40rem/16);
+    height: (40rem/16);
+    border-radius: 100%;
+  }
+}

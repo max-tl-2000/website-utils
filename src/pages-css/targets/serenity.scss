@@ -1,0 +1,108 @@
+@import '../colors/serenity-colors.scss';
+
+.portalMountPoint,
+[data-reva-root] {
+  box-sizing: border-box;
+
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+}
+
+html body button[data-type='raised'][data-role='primary'] {
+  background: $accentColor !important;
+}
+
+html body button[data-type='flat'][data-role='primary'],
+html body button[data-type='flat'][data-role='primary']:hover {
+  color: $accentColor !important;
+}
+
+html body button[data-type=flat][flat-version='2'] {
+  border: .125rem solid $accentColor;
+}
+
+html body button[data-component='icon-button'][data-type='flat'][data-role='primary'] {
+  color: $accentColor !important;
+}
+
+html body button[data-component='icon-button'][data-type='flat'][data-role='primary'] svg {
+  fill: $accentColor !important;
+}
+
+html body [data-component='group-layout-selector'] button[data-selected='true'][data-type='raised']:before {
+  background: $accentColor !important;
+}
+
+html body [data-component='group-layout-selector']:hover button[data-type='flat'] {
+  background: $accentColor !important;
+}
+
+html body .portalMountPoint button[data-type='raised'][data-role='primary']:hover {
+  background: $accentColorHover;
+}
+
+html body .portalMountPoint button[data-type='raised'][data-role='primary'] {
+  background: $accentColor;
+}
+
+html body .portalMountPoint button[data-component='icon-button'][data-type='flat'][data-role='primary'] {
+  color: $accentColor;
+}
+
+html body .portalMountPoint button[data-component='icon-button'][data-type='flat'][data-role='primary'] svg {
+  fill: $accentColor;
+}
+
+html body .portalMountPoint button[data-type='flat'][data-role='primary'],
+html body .portalMountPoint button[data-type='flat'][data-role='primary']:hover {
+  color: $accentColor;
+}
+
+html body .portalMountPoint button[data-type='raised'][data-role='primary']:hover {
+  background: $accentColorHover;
+}
+
+html body [data-component='calendar-container'] [data-part='header'] {
+  background-color: $accentColor !important;
+}
+
+html body [data-component='calendar-container'] [data-part='circle'] svg {
+  fill: $accentColor;
+}
+
+html body [data-id='marketingLayoutUnitCard']:active,
+html body [data-id='marketingLayoutUnitCard'][data-selected='true'] {
+  background: $accentColor !important;
+}
+
+html body [data-id='dateSlot'][data-today='true'] > div:after {
+  background: $accentColor !important;
+}
+
+html body [data-id='appointmentsButtonContainer'] [data-component='appointment-button']:hover {
+  border: 1px solid $accentColor !important;
+  background: $accentColor !important;
+}
+
+html body [data-part='day'][data-selected='false'] [data-today='true'] {
+  color: $linkColor !important;
+}
+
+html body [data-id='slots-selector'] {
+  border-top: 6px solid $accentColor !important;
+}
+
+html body .portalMountPoint [data-id='backToTodayButton'] [data-text-element='true'] {
+  color: $linkColor !important;
+}
+
+html body .portalMountPoint [data-id='viewMoreButton'] [data-text-element='true'] {
+  color: $linkColor !important;
+}
+
+html body [data-component='pickbox'][data-checked='true'] svg {
+  fill: $accentColor !important;
+}

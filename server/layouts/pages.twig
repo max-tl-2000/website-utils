@@ -1,0 +1,48 @@
+{% extends './base.twig' %}
+{% block title %}About{% endblock %}
+{% block content %}
+  <style type="text/css">
+    .mainContent {
+      min-height: calc(100vh - 430px);
+    }
+  </style>
+  <div class="scrollerContainer">
+    <div class="cWrapper mainContent">
+      {% block pageContent %}{% endblock %}
+    </div>
+  </div>
+  <div class="lightHeader shadowCaster" id="header">
+    <div class="cWrapper headerBlock">
+      {% include '../parts/logo.twig' %}
+      <div class="navLinks">{% include '../parts/navigation.twig' %}</div>
+      {% include '../parts/header-menu.twig' %}
+    </div>
+  </div>
+</div>
+{% endblock %}
+{% block revaJSLoaded %}
+<script>
+  (function () {
+    var THRESHOLD = 16;
+    document.addEventListener('DOMContentLoaded', function () {
+      var revaPropertyTabs = document.querySelector('#revaPropertyTabs');
+      store.propertyTabsStore.loadFromDOM('[data-reva-section]');
+      var btnBackToTop = document.querySelector('#backToTopProperty');
+
+      var getScrollingElement = Reva.utils.getScrollingElement;
+
+      btnBackToTop.addEventListener('click', function () {
+        getScrollingElement().scrollTop = 0;
+      });
+      var header = document.querySelector('#header');
+      var checkScrollPosition = Reva.utils.debounce(function () {
+        var scrollTop = getScrollingElement().scrollTop;
+        var searchVisibleThreshold = scrollTop > revaPropertyTabs.offsetTop + 100;
+        header.setAttribute('data-tabs-visible', searchVisibleThreshold);
+      }, THRESHOLD);
+      checkScrollPosition();
+      window.addEventListener('scroll', checkScrollPosition);
+    });
+  }());
+</script>
+{% endblock %}

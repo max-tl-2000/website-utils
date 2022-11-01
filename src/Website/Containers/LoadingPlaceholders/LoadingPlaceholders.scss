@@ -1,0 +1,8 @@
+@import '../../../scss/_placeholder';
+
+.skeleton-title {
+  @include loading-placeholder-dark;
+
+  height: (15rem/16);
+  margin-bottom: (24rem/16);
+}

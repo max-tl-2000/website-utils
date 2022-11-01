@@ -1,0 +1,27 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "server",
+      "program": "${workspaceFolder}/}"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "sourceMaps": true,
+      "name": "debug-current-file",
+      "showAsyncStacks": true,
+      "runtimeArgs": [
+        "--require",
+        "./babel-register.js",
+        "--inspect-brk"
+      ],
+      "program": "${workspaceRoot}/${relativeFile}",
+    }
+  ]
+}

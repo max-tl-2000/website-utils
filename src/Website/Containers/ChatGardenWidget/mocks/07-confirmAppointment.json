@@ -1,0 +1,50 @@
+{
+    "Messages": {
+        "Message": [],
+        "version": "1.0"
+    },
+    "name": "ScheduleTour",
+    "Objects": [
+        {
+            "currentStep": "ConfirmAppointment",
+            "currentStepNumber": 4,
+            "totalSteps": 7,
+            "rule": "ScheduleTour",
+            "workflowName": "ScheduleTour",
+            "step": {
+                "isMarketingSpecialText": true,
+                "conversationContext": "Thanks!  We’ve got everything needed to confirm your tour for Tuesday at 2:00 pm (Sept 29).",
+                "strong":[
+                    {
+                      "begin":"62",
+                      "end":"90"
+                    }
+                  ],
+                "displayVariable": [
+                    {
+                        "name": "APPOINTMENT_TIME",
+                        "format": "dddd, MMM Do, at h:mm a"
+                    }
+                ],
+                "button": [
+                    {
+                        "conversationConsumer": "Confirmed!  I’ll see you $APPOINTMENT_TIME.",
+                        "displayText": "Confirm your tour",
+                        "style": "primary",
+                        "order": 1
+                    }
+                ],
+                "totalSteps": null,
+                "nextStep": "BackHome",
+                "stepNumber": 4,
+                "tertiaryButton": [
+                    {
+                        "conversationConsumer": "Please take me back to the beginning",
+                        "displayText": "Cancel tour",
+                        "targetStep": "BackHome"
+                    }
+                ]
+            }
+        }
+    ]
+}

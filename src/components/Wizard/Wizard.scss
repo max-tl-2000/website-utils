@@ -1,0 +1,96 @@
+@keyframes enterAnim {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes exitAnim {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.enter {
+  position: absolute;
+  width: 100%;
+  min-height: 500px;
+  animation: enterAnim .001s ease-out;
+}
+
+.exit {
+  position: absolute;
+  width: 100%;
+  min-height: 500px;
+  animation: exitAnim .001s linear;
+}
+
+.Wizard {
+  position: relative;
+  display: block;
+  border: 1px solid #e0e0e0;
+}
+
+.Step {
+  display: block;
+
+  &.container {
+    padding: (20rem/16) (37rem/16);
+  }
+
+  &.compact {
+    .header {
+      padding: 1rem 1.5rem;
+
+      .title {
+        line-height: 1.2em;
+        padding-right: 2rem;
+      }
+
+      .subTitle {
+        font-size: (14rem/16);
+        line-height: 1.2em;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.header {
+  position: relative;
+  padding: (20rem/16) 2rem (25rem/16);
+
+  &:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    content: ' ';
+    border: none;
+    background-image: linear-gradient(90deg, #e0e0e0, #e0e0e0 50%, transparent 50%, transparent 100%);
+    background-size: 15px 1px;
+  }
+
+  .title {
+    margin-bottom: (6rem/16);
+  }
+
+  .subTitle {
+    line-height: 1.4em;
+  }
+}
+
+.wrapper {
+  display: block;
+
+  &.container {
+    padding: (20rem/16) (25rem/16);
+  }
+}

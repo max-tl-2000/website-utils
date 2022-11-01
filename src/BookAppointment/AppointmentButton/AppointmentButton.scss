@@ -1,0 +1,55 @@
+@import '../common';
+@import '../../scss/_common.scss';
+
+.AppointmentButton {
+  display: block;
+  width: 81px;
+  height: 33px;
+  cursor: pointer;
+  text-align: center;
+  border: 1px solid #9e9e9e;
+  border-radius: 100px;
+  background: transparent;
+
+  -webkit-appearance: none;
+
+  &:focus {
+    outline: none;
+
+    [data-input-method='keyboard'] & {
+      @include focusOutlineProps();
+    }
+  }
+
+  &:hover {
+    border: 1px solid vars(--reva-global-accent-color, $hoverBackground);
+    background: vars(--reva-global-accent-color, $hoverBackground);
+
+    .label {
+      color: #fff;
+    }
+  }
+
+  .label {
+    font-size: (14rem/16);
+    margin-bottom: 0;
+    color: #9e9e9e;
+  }
+
+  &.active {
+    border: 1px solid vars(--reva-global-text-primary-color, #757575);
+
+    .label {
+      color: vars(--reva-global-text-primary-color, #757575);
+    }
+
+    &:hover {
+      border: 1px solid vars(--reva-global-accent-color, $hoverBackground);
+      background: vars(--reva-global-accent-color, $hoverBackground);
+
+      .label {
+        color: vars(--reva-global-text-primary-color-lf, #fff);
+      }
+    }
+  }
+}

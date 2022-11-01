@@ -1,0 +1,32 @@
+@import '../../scss/colors.scss';
+
+.Dialog {
+  max-width: 70%;
+  margin-left: .75rem;
+  padding: .5rem;
+  border-radius: 4px 4px 4px 0;
+  background-color: $grey300;
+
+  align-self: center;
+
+  &.user {
+    margin-right: .75rem;
+    border: 1px solid rgba(102, 155, 65, .4);
+    border-radius: 4px 4px 0 4px;
+    background-color: rgba(102, 155, 65, .06);
+  }
+
+  p {
+    font-size: 13px !important;
+    margin: 0 !important;
+  }
+
+  .botLoading {
+    position: relative;
+    width: 55px;
+  }
+
+  &.noBg {
+    background-color: transparent;
+  }
+}

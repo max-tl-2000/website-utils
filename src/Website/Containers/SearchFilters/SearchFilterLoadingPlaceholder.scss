@@ -1,0 +1,63 @@
+@import '../../../scss/_placeholder';
+
+.skeleton-container,
+.skeleton-child-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.skeleton-container {
+  flex-direction: column;
+  width: 100%;
+}
+
+.skeleton-child-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+
+  &.vertical {
+    flex-direction: column;
+  }
+}
+
+.skeleton {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
+
+  flex-basis: 25%;
+
+  &.vertical {
+    margin-bottom: (15rem/16);
+  }
+
+  &.vertical:nth-child(1) {
+    display: none;
+  }
+
+  > .rows {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    margin-bottom: (11rem/16);
+
+    > .checkbox {
+      @include loading-placeholder-dark;
+
+      width: (15rem/16);
+      height: (15rem/16);
+      margin-right: (10rem/16);
+      border-radius: 1px;
+    }
+
+    > .text-line {
+      @include loading-placeholder-dark;
+
+      height: (15rem/16);
+    }
+  }
+}

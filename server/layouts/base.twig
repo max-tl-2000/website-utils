@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% if GTM_ID is not empty %}
+    <script>window.dataLayer = []</script>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','{{GTM_ID}}');</script>
+    <!-- End Google Tag Manager -->
+    {% endif %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Reva Widgets - {% block title %}{% endblock %}</title>
+    <link href="https://fonts.googleapis.com/css?family=Heebo:400,700,500|Playfair+Display:400,700,500" rel="stylesheet" />
+    {% if cssResource is not empty %}
+    <link href="{{cssResource}}" rel="stylesheet" />
+    {% endif %}
+    {% if pageCSS is not empty %}
+      <link href="{{pageCSS}}" rel="stylesheet" type="text/css" />
+    {% endif %}
+
+
+    {% block headStyles %}
+    {% endblock %}
+
+    {% if dev %}
+    <script src="/browser-sync/browser-sync-client.js?v=2.24.6" async></script>
+    {% endif %}
+
+  </head>
+  <body class="reva-not-ready">
+    {% if GTM_ID is not empty %}
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{GTM_ID}}"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    {% endif %}
+    {% include '../parts/scripts.twig' %}
+    <script type="text/javascript">
+      (function () {
+        var token = '{{ TOKEN }}';
+        var host = '{{ TENANT_HOST }}';
+        var googleMapsApiToken = '{{ GOOGLE_MAPS_API_TOKEN }}';
+        var assetsBasePath = '{{ ASSETS_BASE_PATH }}';
+        
+        Reva.initUtils({
+          host: host,
+          token: token,
+          loadCSS: false,
+          googleMapsApiToken: googleMapsApiToken,
+          assetsBasePath: assetsBasePath,
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+          var s = Reva.stores.getWebSiteStore();
+          s.addTrackingConsumer(function (args) {
+            // this sends the payload to GTM
+            window.dataLayer && window.dataLayer.push({ event: 'track-action', payload: args });
+          });
+        });
+      }());
+    </script>
+
+    {% block revaJSLoaded %}{% endblock %}
+    {% block content %}{% endblock %}
+    <style type="text/css">
+      #footer { background: #343434; }
+    </style>
+    <div id="footer">
+      <div id="navigation"></div>
+      <div class="footerNav cWrapper">
+        <div class="navigationLinks">
+          <a href="/">Home</a>
+          <a href="/residents">Residents</a>
+          <a href="/investors">Investors</a>
+          <a href="/about">About</a>
+        </div>
+      </div>
+      <div class="smallFooter">
+        <div class="cWrapper">
+          <p class="copyright">Copyright © Tyrell. All Rights Reserved. Privacy Statement</p>
+          <a class="footerLink" href="mailto:support@reva.tech">Tyrell email</a>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      (function () {
+        Reva.ui.createNavigationWidget('#navigation', {
+          onNavigationItemClick: function onNavigationItemClick(args) {
+            Reva.navigator.navigateTo(args.url);
+          }
+        });
+
+        Reva.ui.createUserActivityWidget();
+      }());
+    </script>
+    <script type="text/javascript">
+      (function () {
+        document.addEventListener('DOMContentLoaded', function () {
+          var header = document.querySelector('#header');
+
+          if (!header) {
+            console.log('Missing searchHeader element');
+            return;
+          }
+
+          var getScrollingElement = Reva.utils.getScrollingElement;
+
+          var checkScrollPosition = function checkScrollPosition() {
+            var scrollTop = getScrollingElement().scrollTop;
+            header.setAttribute('data-cast-shadow', scrollTop > 0);
+            document.body.setAttribute('data-scrolled', scrollTop > 10);
+          };
+
+          checkScrollPosition();
+          window.addEventListener('scroll', checkScrollPosition);
+
+          var links = Array.from(document.querySelectorAll('.navigationLinks a'));
+          var locationPathName = window.location.pathname;
+
+          links.forEach(function (link) {
+            if (link.pathname === locationPathName) {
+              link.classList.add('revaCurrentPath');
+            }
+          });
+        });
+      }());
+    </script>
+  </body>
+</html>

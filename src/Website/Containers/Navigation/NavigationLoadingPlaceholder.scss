@@ -1,0 +1,64 @@
+@import '../../../scss/_colors';
+
+.title {
+  width: 85%;
+  max-width: (650rem/16);
+  height: (22rem/16);
+  margin-top: 1rem;
+  margin-bottom: 2.5rem;
+  background: rgba(#fff, .8);
+}
+
+.skeleton-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: (10rem/16);
+
+  .rows-skeleton {
+    width: (180rem/16);
+    margin-right: 4rem;
+    margin-bottom: (30rem/16);
+    margin-bottom: 3rem;
+  }
+
+  .row {
+    height: (18rem/16);
+    margin-bottom: (16rem/16);
+    background: rgba(#fff, .54);
+
+    &:nth-child(1) {
+      background: rgba(255,255,255, .80);
+    }
+  }
+
+  &.xsmall2 {
+    flex-direction: row;
+
+    flex-wrap: wrap;
+  }
+
+  .rows-skeleton:nth-child(1) {
+    .row:nth-child(n+6) {
+      display: none;
+    }
+  }
+
+  .rows-skeleton:nth-child(2) {
+    .row:nth-child(n+5) {
+      display: none;
+    }
+  }
+
+  .rows-skeleton:nth-child(4) {
+    .row:nth-child(n+7) {
+      display: none;
+    }
+  }
+
+  .rows-skeleton:nth-child(5) {
+    .row:nth-child(n+5) {
+      display: none;
+    }
+  }
+}

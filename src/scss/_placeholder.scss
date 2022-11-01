@@ -1,0 +1,27 @@
+@import './_colors';
+@import './animation';
+
+@mixin loading-placeholder-base {
+  width: 100%;
+  animation: pulse 1.25s ease-in-out infinite;
+  border-radius: 5px;
+  background-size: 200% 200%;
+}
+
+@mixin loading-placeholder-dark {
+  @include loading-placeholder-base;
+
+  background: rgba($black, .12);
+}
+
+@mixin loading-placeholder-light {
+  @include loading-placeholder-base;
+
+  background-image: linear-gradient(90deg, rgba($white, .7) 0%, rgba($white, .03) 100%);
+}
+
+@mixin loading-placeholder-medium-light {
+  @include loading-placeholder-base;
+
+  background-image: linear-gradient(90deg, rgba($white, .54) 0%, rgba($white, .03) 100%);
+}

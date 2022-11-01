@@ -1,0 +1,30 @@
+.Form {
+  position: relative;
+  min-height: 140px;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+
+  .label {
+    font-size: 14px;
+    margin-bottom: .8rem !important;
+  }
+}
+
+.feedbackSent {
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.textArea {
+  font-size: 1rem;
+  width: 100%;
+  min-height: 90px;
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+
+.actions {
+  margin-top: .5rem;
+  text-align: right;
+}

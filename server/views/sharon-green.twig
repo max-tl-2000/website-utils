@@ -1,0 +1,75 @@
+{% extends '../layouts/simple.twig' %}
+{% block title %} Phone replacement test{% endblock %}
+{% block htmlAttrs %} class="simple-pages" {% endblock %}
+{% block headStyles %}
+<link
+  href="https://fonts.googleapis.com/css?family=Josefin+Sans|Open+Sans&display=swap"
+  rel="stylesheet"
+/>
+{% endblock %}
+
+{% block content %}
+{% include '../parts/scripts.twig' %}
+<script type="text/javascript">
+  (function() {
+    var token = "{{ TOKEN }}";
+    var host = "{{ TENANT_HOST }}";
+
+    Reva.initUtils({
+      host: host,
+      token: token,
+      loadCSS: false,
+      autoLoadProperties: false
+    });
+  })();
+</script>
+<div id="content">
+  <h1 class="reva-title">Sharon Green demo</h1>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum metus
+    sapien, gravida id ullamcorper et, pharetra ac erat. Morbi tristique ac nisl
+    nec semper. <a class="reva-phone-class">505-433-2233</a> Ut rhoncus massa
+    eget elit laoreet pretium. Nam et lectus euismod, blandit augue id,
+    malesuada mi. Donec non turpis eget nisl lacinia ornare ut quis justo.
+    <a class="reva-phone-class">505-433-2233</a> Fusce gravida velit lectus, in
+    tincidunt nulla hendrerit vitae. Maecenas eleifend felis justo, non iaculis
+    urna porttitor non. Ut a lectus nec nibh gravida
+    <a class="reva-phone-class">505-433-2233</a> sagittis sed vehicula justo.
+    Etiam sed nisl a arcu tempor euismod ut non arcu. Donec eros elit, elementum
+    at nulla eget, mail to: <a class="reva-email-class">this will be replaced</a> accumsan fringilla metus.
+  </p>
+  <p>
+    Fusce et lorem justo. <a class="reva-phone-class">505-433-2233</a> Sed at
+    venenatis quam, non blandit tortor. Suspendisse condimentum aliquet mattis.
+    Suspendisse sed arcu odio. Curabitur eu vulputate neque. Nunc nec dui eu
+    neque finibus <a class="reva-email-class">this will be replaced</a> accumsan et ut elit. Nunc sapien felis, mollis at consectetur
+    vel, feugiat sit amet ligula. Donec nec tincidunt nulla.
+  </p>
+  <h2 class="reva-title">Find Your New Home</h2>
+  <div id="inventorySelector"></div>
+  <script type="text/javascript">
+    (function () {
+      var s = Reva.stores.getWebSiteStore();
+      s.setCurrentPropertyId('cea6b43f-2181-49ab-9f0c-216420cc9136');
+      Reva.ui.createInventorySelectorWidget('#inventorySelector');
+
+      Reva.ui.replaceMarkupInDOM();
+    }());
+  </script>
+  <p>
+    Donec consectetur volutpat purus quis imperdiet. Orci varius natoque
+    penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc
+    tempus rhoncus <a class="reva-email-class">this will be replaced</a> libero, sit amet fringilla lorem congue eget. Proin tristique
+    sapien mattis, commodo ante sed, dictum ex.
+    <a class="reva-phone-class">505-433-2233</a> Curabitur suscipit nisl aliquet
+    mauris semper, ut consectetur mi fermentum. Aliquam diam lorem, laoreet a
+    sem sit amet, finibus ultricies lectus. Maecenas neque enim, efficitur id
+    auctor a, <a class="reva-email-class">this will be replaced</a> auctor sed justo. Suspendisse consectetur justo in fringilla
+    luctus. Nulla nibh lacus, ultricies
+    <a class="reva-phone-class">505-433-2233</a> venenatis cursus ac, tristique
+    nec mauris. Morbi rutrum aliquam purus. Duis vulputate tortor sed ipsum
+    ultricies commodo.
+  </p>
+</div>
+<link href="{{ pageCSS }}" rel="stylesheet" type="text/css" />
+{% endblock %}

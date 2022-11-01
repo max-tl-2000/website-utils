@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`propertyInfoWidget when no selector is provided should throw 1`] = `"selector is required"`;
+
+exports[`propertyInfoWidget when the selector is found but no template is found should throw complaining about missing template 1`] = `"missing template inside \\"#container\\""`;
+
+exports[`propertyInfoWidget when the selector is not found in the dom should throw and mention the not found selector 1`] = `"selector: \\"#container\\" is not found"`;

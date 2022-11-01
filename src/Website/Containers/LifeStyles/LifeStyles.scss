@@ -1,0 +1,103 @@
+:global {
+  .rw_communityHighlights {
+    position: relative;
+    padding: 30px 24px 16px 24px;
+    background: #f5f5f5;
+  }
+
+  .rw_ch_title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: rgba(0,0,0,.87);
+  }
+
+  .rw_ch_lifestyles {
+    display: grid;
+    justify-content: center;
+
+    grid-column-gap: 1rem;
+    grid-row-gap: 1rem;
+    grid-template-columns: repeat(2, 130px);
+
+    [data-small1='true'] & {
+      grid-column-gap: 2rem;
+      grid-row-gap: 1.6rem;
+      grid-template-columns: repeat(3, 130px);
+    }
+  }
+
+  .rw_ch_divider {
+    max-width: 522px;
+    height: 1px;
+    margin: 40px auto;
+    border-top: 1px solid rgba(0, 0, 0, .1);
+    border-bottom: 1px solid #fff;
+  }
+
+  .rw_ch_amenities {
+    display: grid;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+
+    grid-column-gap: 3rem;
+    grid-row-gap: .5rem;
+    grid-template-columns: repeat(1, 231px);
+
+    [data-small1='true'] & {
+      grid-column-gap: 3rem;
+      grid-row-gap: .5rem;
+      grid-template-columns: repeat(2, 231px);
+    }
+
+    li {
+      line-height: 34px;
+      position: relative;
+      padding-left: 30px;
+      list-style-type: none;
+      color: rgba(0, 0, 0, .54);
+
+      &:before {
+        position: absolute;
+        top: 0;
+        left: 5px;
+        content: '→';
+      }
+    }
+  }
+
+  [data-browser='msie11'] {
+    .rw_ch_lifestyles {
+      display: flex;
+      max-width: 400px;
+      margin: 0 auto;
+
+      flex-wrap: wrap;
+    }
+
+    .rw_ch_amenities {
+      display: flex;
+      justify-content: space-between;
+      max-width: 460px;
+      margin: 0 auto;
+
+      flex-wrap: wrap;
+
+      li {
+        display: inline-block;
+        width: 50%;
+        min-width: 230px;
+        vertical-align: top;
+      }
+    }
+  }
+
+  .rw_ch_smallPrint {
+    margin-top: 50px;
+    margin-bottom: 0;
+    text-align: center;
+    color: rgba(0,0,0, .84);
+  }
+}

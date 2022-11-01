@@ -1,0 +1,115 @@
+/*!
+  * Waves v0.6.0
+  * http://fian.my.id/Waves
+  *
+  * Copyright 2014 Alfiana E. Sibuea and other contributors
+  * Released under the MIT license
+  * https://github.com/fians/Waves/blob/master/LICENSE
+  */
+
+.waves-effect {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  cursor: pointer;
+  user-select: none;
+  transform: translate3d(0,0,0);
+
+  -webkit-tap-highlight-color: transparent;
+
+  .waves-ripple {
+    position: absolute;
+    z-index: 1;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+    margin-left: -10px;
+    transition: all .7s ease-out;
+    transition-property: transform, opacity;
+    transform: scale(0);
+    pointer-events: none;
+    opacity: 0;
+    border-radius: 50%;
+    background: rgba(0,0,0,.1);
+  }
+
+  &.waves-lighter {
+    .waves-ripple {
+      background-color: rgba(255, 255, 255, .15);
+    }
+  }
+}
+
+.waves-effect.waves-light .waves-ripple {
+  background-color: rgba(255,255,255,.15);
+}
+
+.waves-effect.waves-red .waves-ripple {
+  background-color: rgba(244,67,54,.7);
+}
+
+.waves-effect.waves-yellow .waves-ripple {
+  background-color: rgba(255,235,59,.7);
+}
+
+.waves-effect.waves-orange .waves-ripple {
+  background-color: rgba(255,152,0,.7);
+}
+
+.waves-effect.waves-purple .waves-ripple {
+  background-color: rgba(156,39,176,.7);
+}
+
+.waves-effect.waves-green .waves-ripple {
+  background-color: rgba(76,175,80,.7);
+}
+
+.waves-effect.waves-teal .waves-ripple {
+  background-color: rgba(0,150,136,.7);
+}
+
+.waves-effect input[type='button'],
+.waves-effect input[type='reset'],
+.waves-effect input[type='submit'] {
+  font-size: inherit;
+  font-style: normal;
+  text-transform: inherit;
+  border: 0;
+  background: none;
+}
+
+.waves-notransition {
+  transition: none !important;
+}
+
+.waves-circle {
+  transform: translateZ(0);
+
+  -webkit-mask-image: -webkit-radial-gradient(circle, #fff 100%, #000 100%);
+}
+
+.waves-input-wrapper {
+  vertical-align: bottom;
+  border-radius: .2em;
+}
+
+.waves-input-wrapper .waves-button-input {
+  position: relative;
+  z-index: 1;
+  top: 0;
+  left: 0;
+}
+
+.waves-circle {
+  line-height: 2.5em;
+  width: 2.5em;
+  height: 2.5em;
+  text-align: center;
+  border-radius: 50%;
+
+  -webkit-mask-image: none;
+}
+
+.waves-block {
+  display: block;
+}

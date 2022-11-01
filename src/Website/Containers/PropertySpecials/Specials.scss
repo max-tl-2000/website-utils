@@ -1,0 +1,30 @@
+@import '../../../scss/_colors.scss';
+
+.specials-container {
+  width: 100%;
+  background: $grey100;
+
+  .specials-text {
+    line-height: 2rem;
+    margin-bottom: 0;
+  }
+
+  .wrapper {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: (20rem/16);
+
+    &.medium {
+      padding-right: (90rem/16);
+      padding-left: (90rem/16);
+    }
+  }
+}
+
+.specials-text {
+  span {
+    font-weight: 500;
+    margin-right: (5rem/16);
+    color: $caribbeanGreen;
+  }
+}

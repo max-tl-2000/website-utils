@@ -1,0 +1,34 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 430px;
+
+  .mistakeMessage {
+    margin-top: 100px;
+
+    &.hasChildren {
+      margin-top: 1rem;
+    }
+  }
+}
+
+.calendar {
+  width: 60px;
+  height: 60px;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+
+  fill: rgba(0,0,0,.27);
+}
+
+.title {
+  line-height: 1.2rem;
+  text-align: center;
+}
+
+.subTitle {
+  font-size: 1.1rem;
+  text-align: center;
+}

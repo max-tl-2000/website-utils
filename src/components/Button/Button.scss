@@ -1,0 +1,222 @@
+@import '../../scss/_common.scss';
+@import '../../scss/colors.scss';
+
+.Button {
+  font-family: vars(--reva-button-font-family, --reva-typography-font-family, 'Lato');
+  font-size: vars(--reva-button-font-size, (14rem/16));
+  position: relative;
+  min-width: (50rem/16);
+  padding: (9.5rem/16) (15rem/16);
+  cursor: pointer;
+  user-select: none;
+  transition: box-shadow .2s ease-out;
+  border: none;
+  border-radius: (5rem/16);
+
+  -webkit-appearance: none;
+
+  &.loading {
+    .label {
+      visibility: hidden;
+    }
+  }
+
+  .label {
+    position: relative;
+    text-align: center;
+    pointer-events: none;
+  }
+
+  &.big {
+    min-width: (120rem/16);
+    padding: (17.5rem/16) 1.6rem;
+  }
+
+  &.wide {
+    display: block;
+    width: 100%;
+  }
+
+  > span.waves {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &.uppercase {
+    text-transform: uppercase;
+  }
+
+  &:focus {
+    outline: none;
+
+    [data-input-method='keyboard'] & {
+      @include focusOutlineProps();
+    }
+  }
+
+  &[data-type='outline'] {
+    color: vars(--reva-button-outline-fg, --reva-global-accent-color, rgba(0, 0, 0, .87));
+    border: vars(--reva-button-outline-border, 2px solid vars(--reva-button-outline-border-color, --reva-global-accent-color, $darkGreen));
+    background: vars(--reva-button-outline-bg, #fff);
+  }
+
+  &[data-type='raised'] {
+    &[data-role='secondary'] {
+      color: vars(--reva-button-raised-secondary-fg, rgba(0, 0, 0, .54));
+      background: vars(--reva-button-raised-secondary-bg, #eee);
+
+      &:focus,
+      &:global(.focused) {
+        [data-input-method='keyboard'] & {
+          color: vars(--reva-button-raised-secondary-fg-focused, --reva-global-control-color, rgba(0, 0, 0, .87));
+          background: vars(--reva-button-raised-secondary-bg-focused, #e0e0e0);
+        }
+      }
+
+      &:hover,
+      &:global(.hovered) {
+        color: vars(--reva-button-raised-secondary-fg-hovered, --reva-global-control-color, rgba(0, 0, 0, .87));
+        background: vars(--reva-button-raised-secondary-bg-hovered, #e0e0e0);
+        // TODO: should we also include the box-shadow??
+        box-shadow: 0 2px 2px rgba(0, 0, 0, .24), 0 0 2px rgba(0, 0, 0, .12);
+      }
+
+      &:active,
+      &:global(.pressed) {
+        color: vars(--reva-button-raised-secondary-fg-pressed, rgba(0, 0, 0, .87));
+        background: vars(--reva-button-raised-secondary-bg-pressed, #e0e0e0);
+        box-shadow: 0 8px 8px rgba(0, 0, 0, .24), 0 0 2px rgba(0, 0, 0, .12);
+      }
+
+      &[disabled],
+      &[disabled]:hover,
+      &[disabled]:active,
+      &[disabled]:focus {
+        cursor: not-allowed;
+        color: vars(--reva-button-raised-secondary-fg-disabled, --reva-global-control-color-disabled, rgba(0, 0, 0, .27));
+        background: vars(--reva-button-raised-secondary-bg-disabled, #eee);
+        box-shadow: none;
+      }
+    }
+
+    &[data-role='primary'] {
+      color: vars(--reva-button-raised-primary-fg, rgba(255, 255, 255, .94));
+      background: vars(--reva-button-raised-primary-bg, --reva-global-accent-color, #4864f7);
+
+      &:focus,
+      &:global(.focused) {
+        [data-input-method='keyboard'] & {
+          color: vars(--reva-button-raised-primary-fg-focused, #fff);
+          background: vars(--reva-button-raised-primary-bg-focused, --reva-global-accent-color-focused, --reva-global-accent-color, #354fdb);
+        }
+      }
+
+      &:hover,
+      &:global(.hovered) {
+        color: vars(--reva-button-raised-primary-fg-hovered, #fff);
+        background: vars(--reva-button-raised-primary-bg-hovered, --reva-global-accent-color-hovered, --reva-global-accent-color, #354fdb);
+        box-shadow: 0 2px 2px rgba(0, 0, 0, .24), 0 0 2px rgba(0, 0, 0, .12);
+      }
+
+      &:active,
+      &:global(.pressed) {
+        color: vars(--reva-button-raised-primary-fg-pressed, #fff);
+        background: vars(--reva-button-raised-primary-bg-pressed, --reva-global-accent-color-pressed, --reva-global-accent-color, #354fdb);
+        box-shadow: 0 8px 8px rgba(0, 0, 0, .24), 0 0 2px rgba(0, 0, 0, .12);
+      }
+
+      &[disabled],
+      &[disabled]:hover,
+      &[disabled]:active,
+      &[disabled]:focus {
+        cursor: not-allowed;
+        color: vars(--reva-button-raised-primary-fg-disabled, rgba(0, 0, 0, .27));
+        background: vars(--reva-button-raised-primary-bg-disabled, --reva-global-control-bg-disabled, #eee);
+        box-shadow: none;
+      }
+    }
+  }
+
+  &[data-type='flat'] {
+    &[flat-version='2'] {
+      padding: (7.5rem/16) (15rem/16);
+      border: (2rem/16) solid vars(--reva-button-flat2-border-color, --reva-global-accent-color, #4864f7);
+      border-radius: (5rem/16);
+
+      &[data-big='true'] {
+        padding: calc(1.09375rem - 2px) calc(1.6rem - 2px);
+      }
+    }
+
+    &[data-role='primary'] {
+      color: vars(--reva-button-flat-primary-fg, --reva-global-accent-color, rgba(72, 100, 247, .87));
+      background: vars(--reva-button-flat-primary-bg, transparent);
+
+      &:focus,
+      &:global(.focused) {
+        [data-input-method='keyboard'] & {
+          color: vars(--reva-button-flat-primary-fg-focused, --reva-global-accent-color-focused, --reva-global-accent-color, #354fdb);
+          background: vars(--reva-button-flat-primary-bg-focused, rgba(158, 158, 158, .2));
+        }
+      }
+
+      &:hover,
+      &:global(.hovered) {
+        color: vars(--reva-button-flat-primary-fg-hovered, --reva-global-accent-color-hovered, --reva-global-accent-color, #354fdb);
+        background: vars(--reva-button-flat-primary-bg-hovered, rgba(158, 158, 158, .2));
+      }
+
+      &:active,
+      &:global(.pressed) {
+        color: vars(--reva-button-flat-primary-fg-pressed, --reva-global-accent-color-pressed, --reva-global-accent-color, #354fdb);
+        background: vars(--reva-button-flat-primary-bg-pressed, rgba(158, 158, 158, .4));
+      }
+
+      &[disabled],
+      &[disabled]:hover,
+      &[disabled]:active,
+      &[disabled]:focus {
+        cursor: not-allowed;
+        color: vars(--reva-button-flat-primary-fg-disabled, rgba(0, 0, 0, .27));
+        background: vars(--reva-button-flat-primary-bg-disabled, none);
+      }
+    }
+
+    &[data-role='secondary'] {
+      color: vars(--reva-button-flat-secondary-fg, rgba(0, 0, 0, .54));
+      background: vars(--reva-button-flat-secondary-bg, transparent);
+
+      &:focus,
+      &:global(.focused) {
+        [data-input-method='keyboard'] & {
+          color: vars(--reva-button-flat-secondary-fg-focused, rgba(0, 0, 0, .87));
+          background: vars(--reva-button-flat-secondary-bg-focused, rgba(158, 158, 158, .2));
+        }
+      }
+
+      &:hover,
+      &:global(.hovered) {
+        color: vars(--reva-button-flat-secondary-fg-focused, rgba(0, 0, 0, .87));
+        background: vars(--reva-button-flat-secondary-bg-focused, rgba(158, 158, 158, .2));
+      }
+
+      &:active,
+      &:global(.pressed) {
+        color: vars(--reva-button-flat-secondary-fg-pressed, rgba(0, 0, 0, .87));
+        background: vars(--reva-button-flat-secondary-bg-pressed, rgba(158, 158, 158, .4));
+      }
+
+      &[disabled],
+      &[disabled]:hover,
+      &[disabled]:active,
+      &[disabled]:focus {
+        cursor: not-allowed;
+        color: vars(--reva-button-flat-secondary-fg-pressed, rgba(0, 0, 0, .27));
+        background: vars(--reva-button-flat-secondary-bg-pressed, none);
+      }
+    }
+  }
+}

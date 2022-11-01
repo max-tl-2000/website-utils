@@ -1,0 +1,31 @@
+.card {
+  width: 100%;
+  max-width: (600rem/16);
+
+  &.wide {
+    max-width: unset;
+  }
+}
+
+.content {
+  position: relative;
+  padding-bottom: 0;
+
+  &.compact {
+    overflow: auto;
+    max-height: 60.375vh;
+
+    -webkit-overflow-scrolling: touch;
+
+    &.noScrollbars {
+      overflow: unset;
+      max-height: unset;
+
+      -webkit-overflow-scrolling: unset;
+    }
+  }
+
+  &.hasError {
+    padding-top: 0;
+  }
+}

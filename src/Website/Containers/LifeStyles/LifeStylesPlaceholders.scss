@@ -1,0 +1,84 @@
+@import '../../../scss/_placeholder';
+
+.skeleton-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.title {
+  @include loading-placeholder-dark;
+
+  width: (230rem/16);
+  height: (25rem/16);
+}
+
+.blocks-container {
+  display: grid;
+  justify-content: center;
+  margin-top: (40rem/16);
+  padding-left: (50rem/16);
+
+  grid-column-gap: 2rem;
+  grid-row-gap: 2rem;
+  grid-template-columns: repeat(3, (130rem/16));
+}
+
+.main-content,
+.content-desc, {
+  @include loading-placeholder-dark;
+}
+
+.main-content {
+  width: (80rem/16);
+  height: (80rem/16);
+  margin-bottom: (14rem/16);
+}
+
+.content-desc {
+  width: (80rem/16);
+  height: (15rem/16);
+}
+
+.amenities-section-container {
+  display: flex;
+  width: (450rem/16);
+  margin-top: (42rem/16);
+  margin-left: (49rem/16);
+}
+
+.amenity-column {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  > .amenity-row {
+    @include loading-placeholder-dark;
+
+    width: (185rem/16);
+    height: (15rem/16);
+    margin-bottom: (11rem/16);
+  }
+}
+
+[data-browser='msie11'] {
+  .blocks-container {
+    display: flex;
+    max-width: 400px;
+    margin: 0 auto;
+
+    flex-wrap: wrap;
+  }
+
+  .content-desc {
+    margin: 1em;
+  }
+
+  .main-content {
+    margin: 0 1em;
+  }
+
+  .title {
+    margin: 0 auto 1em auto;
+  }
+}

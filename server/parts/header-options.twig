@@ -1,0 +1,28 @@
+<div id="btnFilters" class="btn-trigger" data-overlay="#filtersOverlay">
+  <svg width="27" height="24" viewBox="0 0 27 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 6V3H27V6H0Z" fill="#333"></path>
+    <path d="M0 13.5H27V10.5H0V13.5Z" fill="#333"></path>
+    <path d="M0 21H27V18H0V21Z" fill="#333"></path>
+    <circle cx="7.5" cy="4" r="3.25" stroke="#333" stroke-width="0"></circle>
+    <circle cx="19.5" cy="12" r="3.25" stroke="#333" stroke-width="0"></circle>
+    <circle cx="9.5" cy="20" r="3.25" stroke="#333" stroke-width="0"></circle>
+  </svg>
+
+</div>
+<div id="filtersOverlay" class="reva-overlay">
+  <div class="rw-slide">
+    <button id="btnClose" class="RevaIconButton dark" data-cmd="closeOverlay">
+      <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17.6 19L12 13.4L6.4 19L5 17.6L10.6 12L5 6.4L6.4 5L12 10.6L17.6 5L19 6.4L13.4 12L19 17.6L17.6 19Z"></path>
+      </svg>
+    </button>
+    <div class="filtersScrollArea">
+      {% include './searchFilters.twig' with { 'filterId': 'searchFiltersMenu', 'verticalMenu': true } %}
+    </div>
+  </div>
+</div>
+<script>
+  Reva.ui.createMenuOverlay('#btnFilters', function (isOpen) {
+    return document.querySelector('#header').setAttribute('data-menu-open', isOpen);
+  });
+</script>

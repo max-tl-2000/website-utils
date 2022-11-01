@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Typography Text should render a text element as a block 1`] = `
+<p
+  class="textElement Text primary noRaw"
+  data-component="Text"
+  data-text-element="true"
+>
+  Some value to test
+</p>
+`;
+
+exports[`Typography Text should render a text element as inline using a span 1`] = `
+<span
+  class="textElement Text primary noRaw"
+  data-component="Text"
+  data-text-element="true"
+>
+  Some value to test
+</span>
+`;

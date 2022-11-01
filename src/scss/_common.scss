@@ -1,0 +1,25 @@
+@mixin focusOutlineProps() {
+  outline: 0;
+  box-shadow: 0 0 (1rem/16) (3rem/16) rgba(0, 103, 244, .6);
+}
+
+@mixin errorOutlineProps() {
+  outline: 0;
+  box-shadow: 0 0 (1rem/16) (1rem/16) rgba(255, 0, 0, .26);
+}
+
+@function vars($stack...) {
+  $output: null;
+  $close: '';
+  $length: length($stack);
+  @each $var in $stack {
+    @if (str-index('#{$var}', '--') == 1) {
+      $var: 'var(#{$var}';
+      $close: '#{$close})';
+    }
+
+    $output: if($output, '#{$output}, #{$var}' , $var);
+  }
+
+  @return unquote($output + $close);
+}

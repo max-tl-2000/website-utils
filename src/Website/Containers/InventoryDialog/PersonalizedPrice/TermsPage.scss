@@ -1,0 +1,111 @@
+.TermsPageContainer {
+  position: relative;
+  overflow-y: auto;
+  min-height: 350px;
+  max-height: calc(100vh - 150px);
+  padding: 1.5rem 1.5rem 3rem;
+
+  > [data-component='button'] {
+    margin-top: 2em;
+    margin-bottom: .75em;
+  }
+
+  &.small2 {
+    max-height: 500px;
+    margin-top: 2em;
+    padding: .3rem 2rem 1.5rem;
+
+    .SelectLeaseTerms {
+      margin-top: 2em;
+    }
+
+    .fieldWrapper {
+      padding-top: 0;
+    }
+  }
+}
+
+.MoveInDateSection {
+  max-width: 420px;
+
+  > [data-component='Caption'] {
+    font-size: (12rem/16);
+    line-height: 1.25rem;
+    margin-top: 1rem;
+  }
+}
+
+.SelectLeaseTerms {
+  margin-top: 1rem;
+
+  > [data-component='Text'] {
+    font-weight: 500;
+    opacity: .87;
+  }
+
+  .validationMessage {
+    font-size: 12px;
+    margin-top: .5rem;
+  }
+}
+
+.LeaseTerm {
+  margin-top: 1rem;
+
+  &.firstRow {
+    margin-top: 1.5rem;
+  }
+
+  .label {
+    font-size: .875rem;
+    margin-left: .5rem;
+    color: rgba(0,0,0, .87);
+  }
+
+  > [data-component='Caption'] {
+    margin-bottom: 0;
+  }
+
+  .BestPriceText {
+    margin-left: 1rem;
+    color: #00bfa5;
+  }
+
+  .LightBold {
+    font-weight: 500;
+  }
+
+  .fieldWrapper {
+    padding-top: .35rem;
+  }
+
+  .firstCol {
+    margin-left: 2.4rem;
+  }
+
+  &.secondary {
+    opacity: .54;
+
+    .label {
+      color: rgb(0,0,0);
+    }
+  }
+}
+
+.CustomFontSize {
+  font-size: .875em;
+}
+
+.FooterNote {
+  position: absolute;
+  right: 1.5rem;
+  left: 1.5rem;
+}
+
+.btn {
+  visibility: hidden;
+
+  &.allowExpandLeaseLengths {
+    visibility: visible;
+  }
+}

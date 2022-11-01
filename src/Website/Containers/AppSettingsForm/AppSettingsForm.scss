@@ -1,0 +1,44 @@
+.appSettingsRoot {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: (56rem/16);
+  height: (56rem/16);
+}
+
+.appForm {
+  width: 500px;
+  max-width: 100vw;
+
+  .field {
+    margin-bottom: .8rem;
+  }
+
+  .header {
+    font-size: (26rem/16);
+    margin-bottom: 1.5rem;
+  }
+
+  .fields {
+    max-height: calc(100vh - 215px);
+  }
+
+  .wrapper {
+    padding: (3rem/16);
+  }
+
+  .actions {
+    display: flex;
+    justify-content: space-between;
+    text-align: unset;
+
+    .mainActions {
+      > * {
+        margin-left: .5rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+.Page {
+  overflow-y: scroll;
+  max-height: calc(100vh - 150px);
+  padding-top: 1rem;
+  padding-right: (24rem/16);
+  padding-left: (24rem/16);
+
+  .Contact {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: (24rem/16);
+
+    > [data-component='field'] {
+      margin-top: 1rem;
+    }
+
+    > [data-component='Caption'] {
+      margin-top: .5rem;
+    }
+
+    > div {
+      padding-bottom: 0;
+    }
+  }
+
+  .Questions {
+    height: fit-content;
+    margin-top: 1.5em;
+    margin-bottom: 3rem;
+  }
+
+  .DimmedText {
+    color: rgba(0,0,0, .54);
+  }
+}

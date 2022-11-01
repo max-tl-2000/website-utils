@@ -1,0 +1,82 @@
+@import '../../../scss/_common.scss';
+
+.queryFilter {
+  position: relative;
+  background: #fff;
+}
+
+.textbox {
+  font-weight: normal;
+  font-style: normal;
+  line-height: normal;
+  width: 100%;
+
+  textarea,
+  input {
+    font-size: 1rem;
+  }
+
+  &.selected {
+    textarea,
+    input {
+      font-size: 1rem;
+      font-weight: 500;
+      font-style: normal;
+      line-height: normal;
+      color: #4864f7;
+    }
+  }
+
+  &.error {
+    @include errorOutlineProps();
+  }
+}
+
+.results {
+  position: absolute;
+  z-index: 100;
+  overflow: auto;
+  width: 100%;
+  max-height: (315rem/16);
+  border-radius: (5rem/16);
+  background: white;
+  box-shadow: 0 (2rem/16) (6rem/16) rgba(0, 0, 0, .25);
+
+  -webkit-overflow-scrolling: touch;
+}
+
+.result-item {
+  font-size: (13rem/16);
+  font-weight: normal;
+  font-style: normal;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: (44rem/16);
+  padding: 0 (24em/16);
+
+  align-content: center;
+}
+
+.group-section {
+  font-size: 12px;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 31px;
+  height: (33rem/16);
+  padding: 0 (24em/16);
+  color: rgba(0, 0, 0, .54);
+}
+
+.no-results {
+  padding: 20px 25px;
+}
+
+.error {
+  margin-top: (4rem/16);
+  text-align: left;
+
+  &.alignRightErrorMsg {
+    text-align: right;
+  }
+}

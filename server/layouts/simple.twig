@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" {% block htmlAttrs %}{% endblock %}>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Reva Widgets - {% block title %}{% endblock %}</title>
+
+    {% if dev %}
+    <script src="/browser-sync/browser-sync-client.js?v=2.24.6" async></script>
+    {% endif %}
+
+    {% block headStyles %}
+    {% endblock %}
+  </head>
+  <body {% block bodyAttrs %}{% endblock %}>
+    {% block revaJSLoaded %}{% endblock %}
+    {% block content %}{% endblock %}
+  </body>
+</html>

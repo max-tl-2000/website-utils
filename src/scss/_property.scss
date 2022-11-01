@@ -1,0 +1,279 @@
+@import './_colors.scss';
+
+#revaPropertyMap {
+  width: 100%;
+  height: 600px;
+
+  [data-large='true'] & {
+    height: 930px;
+  }
+}
+
+.scrollerContainer {
+  padding-top: 56px;
+
+  [data-medium='true'] & {
+    padding-top: 100px;
+  }
+}
+
+.bigBlock {
+  position: relative;
+  min-height: 90vh;
+}
+
+.headerWrapper {
+  padding-top: 23px;
+  padding-left: 190px;
+}
+
+.headerWrapper #searchBoxFilterHeader {
+  max-width: 728px;
+}
+
+.mainContent {
+  display: block;
+}
+
+.carousel-section {
+  display: block;
+}
+
+.reva_page_sections {
+  display: block;
+}
+
+.propertyDescription {
+  min-height: 600px;
+}
+
+.communityHighlights {
+  display: block;
+}
+
+.findYourApartment {
+  min-height: 900px;
+  padding-bottom: 40px;
+  background: #fff;
+}
+
+.otherCommunities {
+  min-height: 500px;
+  background: #fff;
+}
+
+.otherCommunities .title {
+  font-size: 24px;
+  padding-top: 80px;
+  padding-bottom: 60px;
+  text-align: center;
+}
+
+.sectionTitle {
+  font-size: 44px;
+  padding-top: 80px;
+  padding-bottom: 60px;
+  text-align: center;
+}
+
+#relatedProperties {
+  padding: 0 24px 50px;
+
+  [data-medium='true'] & {
+    padding: 0 90px 100px;
+  }
+}
+
+#contactUsForm {
+  max-width: 70vw;
+  margin: 0 auto;
+  background: $grey100;
+}
+
+.blockTitle {
+  font-size: 30px;
+  margin: 0;
+  padding-top: 50px;
+  padding-right: 24px;
+  padding-bottom: 50px;
+  padding-left: 24px;
+  text-align: center;
+
+  [data-small2='true'] & {
+    font-size: 44px;
+    padding-top: 90px;
+    padding-bottom: 80px;
+  }
+}
+
+.blockTitle:before {
+  display: block;
+  width: 50px;
+  height: 6px;
+  margin: 0 auto 15px;
+  content: ' ';
+  background: #4864f7;
+}
+
+.smallPrint {
+  font-size: 11px;
+}
+
+.oc_smallLayout {
+  [data-medium='true'] & {
+    display: none;
+  }
+}
+
+.oc_mediumLayout {
+  display: none;
+
+  [data-medium='true'] & {
+    display: block;
+  }
+}
+
+.rw_pd_container {
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 0 24px;
+
+  [data-medium='true'] & {
+    flex-direction: row;
+    padding: 0 90px 130px;
+  }
+}
+
+.rw_pd_container_block {
+  flex: 1;
+  padding: 8px;
+
+  [data-medium='true'] & {
+    padding: 8px 48px 24px 0;
+  }
+
+  p {
+    line-height: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    text-align: justify;
+  }
+}
+
+[data-browser='msie11'] {
+  @media only screen and (max-width: 960px) {
+    .rw_pd_container_block {
+      flex: none;
+    }
+  }
+}
+
+.rw_pd_bullet_block {
+  padding: 8px 24px 8px 8px;
+  background: #f5f5f5;
+
+  [data-medium='true'] & {
+    width: 370px;
+    padding: 16px 24px 24px;
+  }
+
+  [data-large='true'] {
+    width: 470px;
+  }
+
+  ul {
+    padding-left: 8px;
+
+    li {
+      line-height: 34px;
+      position: relative;
+      padding-left: 30px;
+      list-style-type: none;
+      color: rgba(0, 0, 0, .54);
+
+      &:before {
+        position: absolute;
+        top: 0;
+        left: 5px;
+        content: '→';
+      }
+    }
+  }
+}
+
+.rw_gallery_block {
+  display: flex;
+  flex-direction: column;
+
+  > div {
+    flex: 1;
+    height: 660px;
+    background-size: cover;
+  }
+
+  [data-medium='true'] & {
+    flex-direction: row;
+
+    > div {
+      width: 50%;
+    }
+  }
+}
+
+.tabsOnHeaderBlock {
+  position: absolute;
+  top: 0;
+  right: 220px;
+  left: 220px;
+  display: none;
+  animation: fadeIn .3s linear;
+}
+
+[data-medium='true'] {
+  #header[data-tabs-visible='true'] {
+    .tabsOnHeaderBlock {
+      display: block;
+    }
+  }
+}
+
+[data-medium='false'] {
+  [data-component='property-logo'] [data-part='property-name-container'] {
+    padding-right: (72rem/16);
+  }
+}
+
+#backToTopProperty {
+  position: absolute;
+  right: 70px;
+  bottom: 48px;
+  display: none;
+
+  [data-xsmall2='true'] & {
+    right: 30px;
+  }
+
+  [data-medium='true'] & {
+    right: 30px;
+    bottom: 30px;
+  }
+
+  [data-large='true'] & {
+    right: 30px;
+    bottom: 30px;
+  }
+}
+
+#header[data-tabs-visible='true'] {
+  &.lightHeader {
+    background: rgba(255, 255,255, .92);
+  }
+
+  .navLinks {
+    display: none;
+  }
+
+  #backToTopProperty {
+    display: block;
+  }
+}

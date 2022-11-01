@@ -1,0 +1,80 @@
+@import '../scss/_reset.scss';
+
+.mainContainer {
+  @include root();
+
+  max-width: 100vw;
+  min-height: (420rem/16);
+}
+
+[data-browser='msie11'] {
+  .mainContainer {
+    // This prevents the issues with the SizeAware
+    // component in IE11 (it is bad to use one
+    // inside a Dialog, it causes a loop)
+    width: 605px;
+  }
+}
+
+.contactFormHeader {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: (24rem/16) (24rem/16) 0;
+
+  flex-wrap: wrap;
+  flex-wrap: wrap;
+
+  .bigTitle {
+    font-size: (44rem/16);
+    margin-bottom: 1rem;
+  }
+
+  &.small1 {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: (24rem/16) (56rem/16) (24rem/16) (24rem/16);
+  }
+}
+
+.thankYouImage {
+  width: 50px;
+  height: 40px;
+  margin: 25% 0 3em 0;
+
+  path {
+    opacity: .54;
+
+    fill: black;
+  }
+}
+
+.btnClose {
+  margin-top: 36px;
+  margin-bottom: 36px;
+
+  &.hide {
+    visibility: hidden;
+  }
+}
+
+.thankYouContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100vw;
+  min-height: 616px;
+  padding: 24px;
+
+  &.small1 {
+    max-width: 600px;
+  }
+}
+
+.hasWarnig {
+  width: 100%;
+  max-width: (650rem/16);
+}

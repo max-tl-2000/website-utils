@@ -1,0 +1,140 @@
+@import '../common';
+@import '../../scss/colors';
+@import '../../scss/_common';
+$todayBG: #f8a532;
+$defaultBG: #e0e0e0;
+
+.DateSlot {
+  display: inline-block;
+  padding-right: 4px;
+  vertical-align: top;
+}
+
+.dateSlotInner {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 271px;
+  padding-bottom: 60px;
+  background: #fafafa;
+
+  &.hovered {
+    background: #eee;
+  }
+
+  &:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    content: '';
+    background: $defaultBG;
+  }
+
+  &.today:after {
+    background: vars(--reva-global-accent-color, $todayBG);
+  }
+
+  &.today.customizedTodayBackground:after {
+    background: $darkBlue;
+  }
+
+  .text {
+    color: $restFontColor;
+
+    &.hovered {
+      color: $hoverFontColor;
+    }
+  }
+}
+
+.dateBlock {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: (20rem/16) 0 0;
+  text-align: center;
+
+  .dayOfWeek {
+    font-size: (14rem/16);
+    margin-bottom: 5px;
+  }
+
+  .date {
+    font-size: (24rem/16);
+    margin-bottom: 0;
+  }
+}
+
+.viewMoreSection {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 65px;
+
+  .viewMore {
+    font-size: (14rem/16);
+    padding: 15px 10px;
+  }
+}
+
+.middleContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: (271rem/16);
+}
+
+.appointmentsWrapper {
+  width: 100%;
+  height: (145rem/16);
+  padding-top: (20rem/16);
+
+  .button {
+    margin-top: 0;
+    margin-right: auto;
+    margin-bottom: (10rem/16);
+    margin-left: auto;
+  }
+}
+
+.middleContainer {
+  .appointmentsWrapper {
+    .customizedAppBtn {
+      &:hover {
+        border: 1px solid $darkBlue;
+        background: $darkBlue;
+      }
+
+      &:active {
+        &:hover {
+          border: 1px solid $darkBlue;
+          background: $darkBlue;
+        }
+      }
+    }
+
+    .appointmenButtonLarge {
+      width: 80%;
+    }
+
+    .appointmenButtonXlarge {
+      width: calc(100% - 4px);
+    }
+  }
+}
+
+.loadingBlock {
+  position: absolute;
+  top: 135px;
+  width: 100%;
+  height: 50px;
+}

@@ -1,0 +1,73 @@
+.Card {
+  position: relative;
+  display: block;
+
+  &.withActions {
+    padding-bottom: (80rem/16);
+  }
+}
+
+.Content {
+  min-height: (200rem/16);
+
+  &.overflow {
+    overflow: auto;
+  }
+
+  &.container {
+    min-height: (100rem/16);
+    padding: (24rem/16);
+  }
+
+  &.noPaddingBottom {
+    padding-bottom: 0;
+  }
+
+  &.compact {
+    padding: 1rem;
+  }
+}
+
+.Actions {
+  width: 100%;
+  text-align: right;
+
+  &.container {
+    padding: 1rem (24rem/16);
+  }
+
+  &.row {
+    [data-component='button'] {
+      margin-right: 1rem;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &.column {
+    [data-component='button'] {
+      margin-bottom: (10rem/16);
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &.noCompact {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  &.compact {
+    padding: .5rem 1rem;
+  }
+
+  &.noPaddingAtSides {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}

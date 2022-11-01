@@ -1,0 +1,26 @@
+@import '../../../scss/_placeholder';
+
+.skeleton-container,
+.skeleton-child-container {
+  display: flex;
+}
+
+.skeleton-container {
+  flex-direction: column;
+  width: 100%;
+  margin-top: 1.2rem;
+}
+
+.skeleton-child-container {
+  justify-content: space-between;
+  flex-direction: row;
+
+  flex-wrap: wrap;
+
+  > .results-skeleton {
+    @include loading-placeholder-dark;
+
+    height: (377rem/16);
+    margin-bottom: (15rem/16);
+  }
+}

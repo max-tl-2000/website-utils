@@ -1,0 +1,39 @@
+@import '../Typography/Typography.scss';
+@import '../../scss/_common.scss';
+
+.ErrorBlock {
+  width: 100%;
+  padding: 18px 25px;
+  border: 1px solid rgba(255, 0, 0, .26);
+  border-radius: 4px;
+
+  &.fill {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &.errorSummary {
+    &.noBorder {
+      padding: 0;
+      border: 0;
+    }
+
+    ul {
+      margin: (12rem/16) 0;
+      padding: 0;
+
+      li {
+        padding-left: (24rem/16);
+        list-style-position: inside, ;
+        list-style-type: disc;
+        color: vars(--reva-global-text-error-color, $error);
+      }
+    }
+  }
+}

@@ -1,0 +1,47 @@
+@import '../../../scss/_colors.scss';
+@import '../../../scss/common';
+
+.botDialog {
+  display: flex;
+  min-height: 3.125rem;
+  margin-bottom: .75rem;
+  padding-left: .75rem;
+}
+
+.userDialog {
+  display: flex;
+  justify-content: flex-end;
+  min-height: 3.25rem;
+  margin-bottom: .75rem;
+}
+
+.textBox {
+  min-height: 3.125rem;
+  margin-top: .75rem;
+  padding: 0 .75rem;
+}
+
+.moveInDate {
+  max-width: 324px;
+  margin: 0 auto;
+
+  circle {
+    fill: vars(--reva-global-accent-color, $darkGreen) !important;
+  }
+}
+
+.divider {
+  width: 82%;
+  margin: 24px auto;
+  border-top: 1px solid rgba($black, .1);
+  border-bottom: 1px solid $white;
+}
+
+.botLoading {
+  position: relative;
+  width: 55px;
+}
+
+.contentDialog {
+  margin: 1.75rem 24px;
+}

@@ -1,0 +1,61 @@
+{
+  "Messages": {
+      "Message": [],
+      "version": "1.0"
+  },
+  "name": "ScheduleTour",
+  "Objects": [
+      {
+          "currentStep": "CollectEmail",
+          "currentStepNumber": 1,
+          "totalSteps": 7,
+          "rule": "ScheduleTour",
+          "workflowName": "ScheduleTour",
+          "step": {
+              "conversationContext": "What’s a good email address to reach you?  We will NEVER sell or abuse your contact information.",
+              "strong":[
+                {
+                  "begin":"51",
+                  "end":"55"
+                }
+              ],
+              "textBox": [
+                  {
+                      "displayVariable": [
+                          {
+                              "name": "PROSPECT_EMAIL"
+                          }
+                      ],
+                      "button": [
+                          {
+                              "conversationConsumer": "$PROSPECT_EMAIL",
+                              "displayText": "Submit email address",
+                              "nullDisplayText": "Submit email address",
+                              "style": "primary",
+                              "targetStep": "CollectPhone",
+                              "order": 1
+                          }
+                      ],
+                      "isRequired": true,
+                      "isMultiLine": false,
+                      "emptyText": "Email address",
+                      "validationType": "email",
+                      "style": "primary",
+                      "storeField": "email",
+                      "order": 1
+                  }
+              ],
+              "totalSteps": 7,
+              "nextStep": "CollectPhone",
+              "stepNumber": 1,
+              "tertiaryButton": [
+                  {
+                      "conversationConsumer": "Please take me back to the beginning",
+                      "displayText": "Cancel tour",
+                      "targetStep": "home"
+                  }
+              ]
+          }
+      }
+  ]
+}

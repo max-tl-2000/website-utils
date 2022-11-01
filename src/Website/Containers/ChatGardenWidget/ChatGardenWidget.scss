@@ -1,0 +1,259 @@
+@import '../../../scss/colors.scss';
+@import '../../../scss/_common.scss';
+
+.ChatGardenWidget {
+  position: fixed;
+  z-index: 9999;
+  right: 25px;
+  bottom: 25px;
+  width: 80px;
+  height: 80px;
+  animation: pulse-fab 60s infinite;
+  animation-delay: 5s;
+  opacity: 1;
+  border-radius: 40px;
+  background: vars(--reva-global-accent-color, $darkGreen) !important;
+  box-shadow: 0 0 2px rgba(0, 0, 0, .12), 0 6px 6px rgba(0, 0, 0, .24);
+
+  &:hover {
+    box-shadow: 0 0 2px rgba(0, 0, 0, .12), 0 12px 12px rgba(0, 0, 0, .24) !important;
+  }
+
+  &:focus {
+    box-shadow: 0 0 2px rgba(0, 0, 0, .12), 0 6px 6px rgba(0, 0, 0, .24) !important;
+  }
+
+  [chat-bot-is-open=true] & {
+    opacity: 0;
+  }
+
+  svg {
+    width: 36px !important;
+    height: 40px !important;
+  }
+}
+
+@keyframes pulse-fab {
+  0% {
+    transform: scale(.95);
+    box-shadow: 0 0 0 0 rgba(102, 155, 65, .5), 0 6px 6px rgba(0, 0, 0, .24);
+  }
+
+  2% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 10px rgba(51, 217, 178, 0);
+  }
+
+  4% {
+    transform: scale(.95);
+    box-shadow: 0 0 2px rgba(0, 0, 0, .12), 0 6px 6px rgba(0, 0, 0, .24);
+  }
+
+  6% {
+    transform: scale(.95);
+    box-shadow: 0 0 0 0 rgba(102, 155, 65, .5);
+  }
+
+  8% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 10px rgba(51, 217, 178, 0);
+  }
+
+  10% {
+    transform: scale(.95);
+    box-shadow: 0 0 2px rgba(0, 0, 0, .12), 0 6px 6px rgba(0, 0, 0, .24);
+  }
+}
+
+.divider {
+  width: 100%;
+  margin: 24px 0;
+  border-top: 1px solid rgba($black, .1);
+  border-bottom: 1px solid $white;
+}
+
+.dialogButtons {
+  svg {
+    width: 1.4rem !important;
+    height: 1.4rem !important;
+
+    fill: white !important;
+  }
+}
+
+.fullWidthButton {
+  color: white !important;
+  background: vars(--reva-global-accent-color, $darkGreen) !important;
+
+  &:disabled {
+    opacity: .26;
+  }
+}
+
+.minimizeChatDialog {
+  svg {
+    position: relative;
+    top: -4px;
+  }
+}
+
+.chatDialogBg {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.chatDialog {
+  position: fixed;
+  z-index: 10000;
+  right: 25px;
+  bottom: 25px;
+  overflow: scroll;
+  width: 480px;
+  max-width: 98%;
+  height: 70%;
+  max-height: 80vh;
+  padding-bottom: 3rem;
+  border-radius: 4px;
+  background: white;
+  box-shadow: 0 0 2px rgba($black, .12), 0 6px 6px rgba($black, .24);
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  [data-component='Caption'] {
+    margin-bottom: 0 !important;
+  }
+
+  [chat-bot-max-size=true] & {
+    top: 16px;
+    height: 100vh;
+    max-height: calc(100vh - 32px);
+  }
+
+  [data-size='xsmall1'] &,
+  [data-size='xsmall2'] &,
+  [data-size='small1'] &,
+  [data-size='small2'] & {
+    top: 0;
+    right: unset;
+    bottom: unset;
+    left: 0;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+    padding: 0;
+    border-radius: 0;
+  }
+
+  .cdHeader {
+    position: -webkit-sticky;
+    position: sticky;
+    z-index: 1000;
+    top: 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1.2rem;
+    padding: .2rem 0;
+    color: white;
+    border-radius: 4px 4px 0 0;
+    background: vars(--reva-global-accent-color, $darkGreen);
+
+    span {
+      flex: 1;
+    }
+
+    .close {
+      flex: 0 0 40px;
+    }
+  }
+
+  .cdBody {
+    display: flex;
+
+    flex-wrap: wrap;
+    align-content: center;
+
+    button {
+      width: 46%;
+      margin: .375rem 2%;
+
+      [data-size='xsmall2'] & {
+        width: 96%;
+      }
+
+      [data-size='xsmall1'] & {
+        width: 96%;
+      }
+
+      &.fullWidth {
+        width: 96%;
+        margin: .375rem 2%;
+      }
+    }
+  }
+
+  .input {
+    display: block;
+    width: 100%;
+
+    &.input_button {
+      margin-bottom: 20px;
+    }
+
+    div {
+      display: block;
+    }
+
+    input {
+      width: 100%;
+    }
+
+    &.hasError {
+      input {
+        border: red;
+      }
+    }
+  }
+
+  .chatSpecials {
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.5rem;
+    padding: 1.5rem 1rem;
+    text-align: left;
+    letter-spacing: .01em;
+
+    span {
+      color: $caribbeanGreen;
+    }
+  }
+
+  .inventoryUnits {
+    position: relative;
+    margin: 16px 0;
+  }
+}
+
+.imgContainer {
+  margin: 12px 0;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.mainSelection {
+  width: 100% !important;
+  color: white !important;
+  background: vars(--reva-global-accent-color, $darkGreen) !important;
+}

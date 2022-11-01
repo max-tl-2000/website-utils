@@ -1,0 +1,92 @@
+@import '../../scss/_colors.scss';
+@import '../../scss/common.scss';
+
+.container {
+  position: relative;
+  display: inline-block;
+  padding-left: (30rem/16);
+  cursor: pointer;
+
+  &.big {
+    min-height: 44px;
+    padding-left: 54px;
+
+    .board {
+      top: (3rem/16);
+      left: (3rem/16);
+      width: (38rem/16);
+      height: (38rem/16);
+      border-radius: (5rem/16);
+    }
+
+    .checkmark {
+      width: (44rem/16);
+      height: (44rem/16);
+    }
+
+    .label {
+      font-size: 1rem;
+      padding-top: 1rem;
+    }
+  }
+
+  .label {
+    font-size: (12rem/16);
+    line-height: 1.1rem;
+    display: inline-block;
+    margin: 0;
+    padding-top: .3rem;
+    transition: color .5s ease-out;
+    vertical-align: top;
+
+    &.white {
+      color: $white;
+    }
+  }
+
+  .board {
+    position: absolute;
+    top: (4rem/16);
+    left: (4rem/16);
+    width: (16rem/16);
+    height: (16rem/16);
+    border-radius: (2rem/16);
+
+    &.white {
+      background: $white;
+    }
+
+    &.radio {
+      border-radius: 50%;
+    }
+  }
+
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: (24rem/16);
+    height: (24rem/16);
+
+    svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      transition: fill .5s ease-out;
+
+      fill: vars(--reva-global-control-border-color, rgba($black, .54));
+    }
+
+    &.white {
+      svg {
+        fill: $white;
+      }
+    }
+
+    &.checked {
+      svg {
+        fill: vars(--reva-global-accent-color, $darkBlue);
+      }
+    }
+  }
+}

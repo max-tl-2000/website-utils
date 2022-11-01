@@ -1,0 +1,25 @@
+.roundButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #4864f7;
+
+  svg {
+    fill: #fff;
+  }
+}
+
+.lifeStyleIcon {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 130px;
+}
+
+.label {
+  margin-top: 15px;
+  text-align: center;
+}

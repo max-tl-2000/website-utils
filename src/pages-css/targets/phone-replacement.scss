@@ -1,0 +1,13 @@
+$fontFamily: 'Open sans', sans-serif;
+$titleFontFamily: 'Josefin Sans', sans-serif;
+
+@import '../../scss/_reset';
+@import '../common/base.scss';
+
+#content {
+  padding: 1rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}

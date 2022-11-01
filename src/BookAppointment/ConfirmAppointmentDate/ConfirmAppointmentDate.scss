@@ -1,0 +1,38 @@
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 430px;
+}
+
+.calendar {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 2rem;
+
+  fill: rgba(0,0,0,.27);
+}
+
+.title {
+  line-height: 1.2rem;
+  text-align: center;
+}
+
+.subTitle {
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.actions {
+  margin-top: 50px;
+
+  > * {
+    margin-right: 15px;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+}

@@ -1,0 +1,7 @@
+.dialog {
+  width: 95%;
+
+  &.fixedWidth {
+    width: (1000rem/16);
+  }
+}

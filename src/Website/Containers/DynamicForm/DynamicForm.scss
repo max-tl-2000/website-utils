@@ -1,0 +1,32 @@
+.card {
+  width: 100%;
+
+  &.wide {
+    max-width: unset;
+  }
+}
+
+.content {
+  position: relative;
+
+  &.compact {
+    overflow: auto;
+    max-height: 60.375vh;
+    padding-top: .5rem;
+
+    -webkit-overflow-scrolling: touch;
+  }
+
+  &.noPaddingAtSides {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+.showLabels {
+  padding-top: (22rem/16);
+}
+
+.actionButton {
+  min-width: (200rem/16);
+}

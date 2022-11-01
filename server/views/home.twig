@@ -1,0 +1,130 @@
+{% extends '../layouts/base.twig' %}
+{% block title %}Home
+{% endblock %}
+{% block content %}
+  <style type="text/css">
+    .heroWrapper { background-image: url('/assets/home_bg.png'); }
+    .homeArrowDown:after {
+      background: url('/assets/arrow-down.svg') center/cover;
+    }
+    .box.people {
+      background: url('/assets/people.png') center/cover;
+    }
+
+    .box.notes {
+      background: url('/assets/notes-coffee.png') center/cover;
+    }
+
+    .box.about-us {
+      background: url('/assets/about-us.png') center/cover;
+    }
+
+    .block-investors {
+      background: url('/assets/meeting.png') center/cover;
+    }
+
+    #marketsNavigation {
+      width: 100%;
+      max-width: 1100px;
+      text-align: center;
+    }
+  </style>
+  <div class="contentWrapperHome">
+    <div class="heroWrapper">
+      <div id="bgVideo" class="bgVideo"></div>
+      <script type="text/javascript">
+        (function () {
+          Reva.ui.createBackgroundVideo('#bgVideo', {
+            src: 'https://www.youtube.com/watch?v=K2fgeo9YdPA&feature=youtu.be',
+            fallback: 'https://images.squarespace-cdn.com/content/v1/5c8aa8e6aadd341e9e874998/1566933616008-8FAIQ34HNVJYTVRHQWAM/ke17ZwdGBToddI8pDm48kLNZ-CjF0WUIJfEB5EIlIdMUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYy7Mythp_T-mtop-vrsUOmeInPi9iDjx9w8K4ZfjXt2dpJRWtKXc3gBsYh8IoxoRqp5f4_-YvaDSxmCBRErK4IdCjLISwBs8eEdxAxTptZAUg/dylan+swimming+pool.png',
+          });
+        }());
+      </script>
+      <div class="content">
+        <div id="searchSection" class="blockWrapper">
+          <h1 class="serifFont">Tyrell: this is home</h1>
+          <p class="tagline">Let's find yours</p>
+          <div id="searchBox"></div>
+          <div class="reva_homeLink" id="viewAllMarkets" data-overlay="#allMarketsSection">
+            <p>View all markets</p>
+          </div>
+          <div class="homeArrowDown"></div>
+        </div>
+      </div>
+      <div id="allMarketsSection" data-overlay-name="marketsSectionOverlay" class="reva-overlay markets-overlay-section">
+        <div class="content">
+          <div class="blockWrapper">
+            <h1 class="serifFont">Tyrell: this is home</h1>
+            <p class="tagline">Let's find yours</p>
+            <div id="marketsNavigation"></div>
+            <div class="reva_homeLink" data-cmd="closeOverlay">
+              <p>Hide all markets</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      {# <style type="text/css">
+        /* specify a global css class here to use with the inputClassName passed below */
+        .ss-search-input { color: red !important }
+      </style> #}
+      <script type="text/javascript">
+        (function () {
+          Reva.ui.createSearchBoxWidget('#searchBox', {
+            // inputClassName: 'ss-search-input', // use this to pass a className for the input of the searchbox
+            subContext: Reva.tracking.SubContexts.HOME_HERO_BLOCK,
+            onSuggestionClick: function onSuggestionClick(args) {
+              var url = args.url;
+              Reva.navigator.navigateTo(url);
+            }
+          });
+
+          Reva.ui.createMenuOverlay('#viewAllMarkets', function (isOpen) {
+            document.querySelector('#searchSection').setAttribute('data-visible', !isOpen);
+          });
+
+          Reva.ui.createNavigationWidget('#marketsNavigation', {
+            onNavigationItemClick: function onNavigationItemClick(args) {
+              Reva.navigator.navigateTo(args.url);
+            },
+            elevatingMarketsLayout: true,
+          });
+        }());
+      </script>
+    </div>
+    <div class="home_smallLayout">
+      {% include '../parts/home-people.twig' %}
+      <div class="box people"></div>
+      {% include '../parts/home-join-us.twig' %}
+      <div class="box notes"></div>
+      {% include '../parts/home-about-us.twig' %}
+      <div class="box about-us"></div>
+    </div>
+    <div class="tiles cWrapper">
+      <div class="box people"></div>
+      {% include '../parts/home-people.twig' %}
+      {% include '../parts/home-join-us.twig' %}
+      <div class="box notes"></div>
+      <div class="box about-us"></div>
+      {% include '../parts/home-about-us.twig' %}
+    </div>
+    <div class="block-investors cWrapper">
+      <div class="investorsWrapper"></div>
+      <div class="textWrapper">
+        <h2 class="serifFont">For our investors</h2>
+        <p>Tyrell is a real estate company focused on the ownership, management, acquisition
+                and redevelopment of apartment communities. Tyrell is publicly traded on the New
+                York Stock Exchange (NYSE symbols: Tyrell and Tyrell PRC, respectively)</p>
+        <a href="/investors">→&nbsp;&nbsp;For our investors</a>
+      </div>
+    </div>
+
+    <div class="homeHeader" id="header">
+      <div class="cWrapper headerBlock">
+        <div class="navLinks">{% include '../parts/navigation.twig' %}</div>
+        {% include '../parts/logo.twig' %}
+      </div>
+      {% include '../parts/header-menu.twig' %}
+    </div>
+
+  </div>
+{% endblock %}

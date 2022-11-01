@@ -1,0 +1,55 @@
+{
+    "Messages": {
+        "Message": [],
+        "version": "1.0"
+    },
+    "name": "ScheduleTour",
+    "Objects": [
+        {
+            "currentStep": "CollectFullName",
+            "currentStepNumber": 1,
+            "totalSteps": 7,
+            "rule": "ScheduleTour",
+            "workflowName": "ScheduleTour",
+            "step": {
+                "mock": true,
+                "conversationContext": "We just need to answer a couple more questions.  What’s your full (legal) name?",
+                "textBox": [
+                    {
+                        "displayVariable": [
+                            {
+                                "name": "PROSPECT_NAME"
+                            }
+                        ],
+                        "button": [
+                            {
+                                "conversationConsumer": "$PROSPECT_NAME",
+                                "displayText": "Submit name",
+                                "nullDisplayText": "Submit name",
+                                "style": "primary",
+                                "targetStep": "CollectEmail",
+                                "order": 1
+                            }
+                        ],
+                        "isRequired": true,
+                        "isMultiLine": false,
+                        "emptyText": "Legal name",
+                        "style": "primary",
+                        "storeField": "fullName",
+                        "order": 1
+                    }
+                ],
+                "totalSteps": 7,
+                "nextStep": "CollectEmail",
+                "stepNumber": 1,
+                "tertiaryButton": [
+                    {
+                        "conversationConsumer": "Please take me back to the beginning",
+                        "displayText": "Cancel tour",
+                        "targetStep": "home"
+                    }
+                ]
+            }
+        }
+    ]
+}

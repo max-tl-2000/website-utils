@@ -1,0 +1,160 @@
+#header[data-search-visible='true'] .headerBlock .navLinks {
+  display: none;
+}
+
+#searchBoxFilterHeader {
+  display: none;
+  animation: fadeIn .5s ease-out;
+}
+
+#backToTop {
+  position: absolute;
+  right: 30px;
+  bottom: 53px;
+  display: none;
+}
+
+.searchBoxWrapper {
+  display: none;
+  padding-top: 1px;
+  padding-left: 120px;
+
+  [data-small2='true'] & {
+    padding-left: 190px;
+  }
+
+  [data-small1='true'] & {
+    display: block;
+  }
+
+  [data-medium='true'] & {
+    padding-top: 23px;
+  }
+
+  [data-large='true'] & {
+    padding-top: 23px;
+  }
+}
+
+[data-small1='true'] {
+  #header[data-search-visible='true'] #searchBoxFilterHeader {
+    display: block;
+  }
+
+  #header[data-search-visible='true'] #backToTop {
+    display: block;
+  }
+}
+
+#searchBoxFilter {
+  padding: 20px 25px 0;
+}
+
+#searchFiltersBody {
+  display: none;
+}
+
+#searchResultList {
+  padding: 0;
+}
+
+[data-small1='true'] {
+  #searchFiltersBody {
+    display: block;
+  }
+}
+
+.searchBoxWrapper #searchBoxFilterHeader {
+  max-width: 728px;
+  margin-right: 180px;
+}
+
+[data-medium='true'] {
+  .searchInterface {
+    padding-right: 450px;
+  }
+
+  .searchFiltersSection {
+    padding: 30px 30px 40px 90px;
+  }
+
+  .bigBlock {
+    position: relative;
+    min-height: 90vh;
+  }
+
+  #revaMap {
+    position: fixed;
+    top: 100px;
+    right: 0;
+    width: 450px;
+    height: calc(100vh - 100px);
+  }
+
+  #revaMap[data-sticky='true'] {
+    position: absolute;
+    top: auto;
+    right: 0;
+    bottom: 0;
+  }
+
+  #header[data-search-visible='true'] #backToTop {
+    bottom: 30px;
+  }
+}
+
+[data-large='true'] {
+  .searchInterface {
+    padding-right: 580px;
+  }
+
+  #revaMap {
+    width: 580px;
+  }
+}
+
+#btnFilters {
+  position: absolute;
+  top: 5px;
+  right: 77px;
+}
+
+[data-small1='true'] {
+  #btnFilters {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+  }
+}
+
+[data-small1='true'] {
+  #btnFilters {
+    display: none;
+  }
+}
+
+#filtersOverlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: 60px 0 0;
+}
+
+.filtersScrollArea {
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+}
+
+#btnClose {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+
+.headerText {
+  position: absolute;
+  left: -9999px;
+}

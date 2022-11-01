@@ -1,0 +1,10 @@
+<div id="searchResultList"></div>
+<script type="text/javascript">
+  (function () {
+    Reva.ui.createSearchResultListWidget('#searchResultList', {
+      onPropertyClick: function onPropertyClick(item) {
+        Reva.navigator.navigateTo(item.url);
+      }
+    });
+  }());
+</script>

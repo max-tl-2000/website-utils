@@ -1,0 +1,55 @@
+{
+    "conversationContext": "How can we assist you?",
+    "button": [
+        {
+            "conversationConsumer": "Can I see what you have available in your community?",
+            "displayText": "Find your new home",
+            "targetWorkflow": "NewLeasingQuote",
+            "style": "primary",
+            "targetStep": "CollectMoveInDate",
+            "order": 2
+        },
+        {
+            "conversationConsumer": "Can we have a quick conversation?",
+            "displayText": "Contact us",
+            "targetWorkflow": "ContactUs",
+            "style": "secondary",
+            "targetStep": "CollectFullName",
+            "order": 3
+        },
+        {
+            "conversationConsumer": "Can I come visit the property to see what it’s like?",
+            "displayText": "Schedule Tour",
+            "targetWorkflow": "ScheduleTour",
+            "style": "secondary",
+            "targetStep": "ScheduleDateTime",
+            "order": 4
+        },
+        {
+            "conversationConsumer": "Tell me about the neighborhood.",
+            "displayText": "THE NEIGHBORHOOD",
+            "targetWorkflow": null,
+            "style": "secondary",
+            "targetStep": "neighborhood",
+            "order": 5
+        },
+        {
+            "conversationConsumer": "Tell me about the community.",
+            "displayText": "THE COMMUNITY",
+            "targetWorkflow": null,
+            "style": "secondary",
+            "targetStep": "community",
+            "order": 6
+        }
+    ],
+    "totalSteps": null,
+    "nextStep": null,
+    "stepNumber": 4,
+    "tertiaryButton": [
+        {
+            "conversationConsumer": "I'm a current resident",
+            "displayText": "Current resident looking for help?",
+            "targetStep": "currentResident"
+        }
+    ]
+}

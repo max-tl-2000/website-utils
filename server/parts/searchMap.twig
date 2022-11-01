@@ -1,0 +1,10 @@
+<div id="revaMap"></div>
+<script type="text/javascript">
+  (function () {
+    Reva.ui.createSearchMapWidget('#revaMap', {
+      onPropertyClick: function onPropertyClick(item) {
+        Reva.navigator.navigateTo(item.url);
+      }
+    });
+  }());
+</script>

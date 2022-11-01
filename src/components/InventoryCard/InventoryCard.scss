@@ -1,0 +1,91 @@
+@import '../../scss/_colors.scss';
+@import '../../scss/_common.scss';
+
+.inventoryCard {
+  display: block;
+  box-sizing: border-box;
+  width: 95%;
+  min-width: 200px;
+  max-width: 520px;
+  height: 240px;
+  margin: 0 auto;
+  padding: 1.2rem 1.2rem 1.7rem;
+  cursor: pointer;
+  transition: transform .25s ease-in, box-shadow .35s ease-in;
+  text-align: center;
+  border-radius: (5em/16);
+  background: $grey100;
+
+  &:active,
+  &.selected {
+    background: vars(--reva-global-accent-color, $darkGreen);
+
+    &:hover {
+      background: vars(--reva-global-accent-color, $darkGreen);
+
+      p {
+        color: $white;
+      }
+    }
+
+    p {
+      color: $white;
+    }
+
+    .apartment > p,
+    .details {
+      color: $white;
+    }
+  }
+
+  &:focus {
+    outline: none;
+
+    [data-input-method='keyboard'] & {
+      @include focusOutlineProps();
+    }
+  }
+
+  &:hover {
+    background: $grey200;
+
+    .apartment > p,
+    .details {
+      color: rgba($black, .87);
+    }
+  }
+
+  &.activeCard {
+    position: relative;
+    z-index: 10;
+    transform: translateY(8px);
+    box-shadow: rgba($black, .5) 0 (12rem/16) (16rem/16) 0;
+  }
+
+  p {
+    line-height: (20rem/16);
+    margin: 0;
+
+    &.details {
+      font-size: (12em/16);
+    }
+
+    &.available {
+      font-size: (12em/16);
+      margin-top: .25rem;
+      margin-bottom: (20rem/16);
+      color: $tealA700;
+    }
+  }
+
+  .apartment {
+    margin-top: (23rem/16);
+  }
+
+  .startingAt {
+    p {
+      font-weight: 500;
+      line-height: (22rem/16);
+    }
+  }
+}

@@ -1,0 +1,52 @@
+.dlgBody {
+  width: 100vw;
+  max-width: 800px;
+}
+
+.Wrapper {
+  display: block;
+}
+
+.WizardStep {
+  &.container {
+    padding: 0;
+  }
+}
+
+.Header {
+  padding-top: 1rem;
+
+  .headerText {
+    font-size: 2rem;
+    font-size: 24px;
+    padding: 0 (48rem/16) 0 (24rem/16);
+    color: rgba(0,0,0,.87);
+  }
+
+  .subTitle {
+    font-size: 14px;
+  }
+}
+
+.Content {
+  overflow-y: auto;
+}
+
+.StepWrapper {
+  position: relative;
+  display: block;
+
+  &.small1 {
+    .Header .headerText {
+      font-size: 32px;
+    }
+  }
+
+  .questions-container {
+    padding-top: (8rem/16);
+
+    .noMargin {
+      margin-top: 0;
+    }
+  }
+}

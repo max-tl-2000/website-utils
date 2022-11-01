@@ -1,0 +1,457 @@
+{% extends '../layouts/base.twig' %}
+{% block title %}Property {{ slug }}{% endblock %}
+{% block content %}
+  <style>
+    #btnFindYourApartment {
+      min-width: 230px;
+      margin-left: 10px;
+    }
+
+    #btnScheduleATour {
+      min-width: 230px;
+    }
+
+    .rw_image_01 {
+      background: url('/assets/pp_01.jpg');
+    }
+
+    .rw_image_02 {
+      background: url('/assets/pp_02.jpg');
+    }
+
+    #contactUsForm1 {
+      padding: 0 1.5rem;
+    }
+
+    [data-small1='true'] #contactUsForm1 {
+      padding: 0 4rem 1rem;
+    }
+
+    #contactUsTitle {
+      text-align: center;
+    }
+
+    #resident-login {
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    html body [data-id='marketingLayoutUnitCard'][data-unit-highlighted='true'] {
+      background: #4864F7 !important;
+    }
+    html body [data-id='marketingLayoutUnitCard'][data-unit-highlighted='true'] p {
+      color: #fff;
+    }
+    html body [data-id='marketingLayoutUnitCard'][data-unit-highlighted='true'] [data-id='availableDate'] {
+      color: #fff;
+    }
+    html body [data-id='marketingLayoutUnitCard'][data-unit-highlighted='true'] [data-id='innerCardDivider'] {
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    html body [data-id='marketingLayoutUnitCard'][data-unit-highlighted='true']:active,
+    html body [data-id='marketingLayoutUnitCard'][data-unit-highlighted='true'][data-selected='true'] {
+      background: #657DF8 !important;
+    }
+    html body [data-id='marketingLayoutUnitCard'][data-unit-highlighted='true']:active:hover,
+    html body [data-id='marketingLayoutUnitCard'][data-unit-highlighted='true'][data-selected='true']:hover {
+      background: #657DF8 !important;
+    }
+
+    html body [data-id='marketingLayoutUnitCard'][data-unit-highlighted='true']:hover {
+      background: #5770F8 !important;
+    }
+    html body [data-id='marketingLayoutUnitCard'][data-unit-highlighted='true']:hover [data-id='apartmentNumberContainer'] > p,
+    html body [data-id='marketingLayoutUnitCard'][data-unit-highlighted='true']:hover [data-id='amenitiesList'] {
+      color: #fff;
+    }
+
+  </style>
+  <div class="scrollerContainer">
+    <div class="lightHeader shadowCaster" id="header">
+      <div class="cWrapper headerBlock">
+        <div id="propertyLogo"></div>
+        <script>
+          (function () {
+            document.addEventListener('DOMContentLoaded', function () {
+              window._reva_property_logo_url = '{{ propertyLogoURL }}';
+              Reva.ui.createPropertyLogoWidget('#propertyLogo', {
+                scrollableParent: Reva.utils.getScrollingElement(),
+                triggerElement: document.querySelector('#revaPropertyTabs'),
+                tenantLogoUrl: window._reva_tenant_logo_url,
+                propertyLogoUrl: window._reva_property_logo_url,
+                onClick: function (args) {
+                  if (args.isTenant) {
+                    window.location.href = '/';
+                    return;
+                  }
+                }
+              });
+            });
+          }());
+        </script>
+        <div class="tabsOnHeaderBlock">
+          <div id="revaPropertyTabsOnHead"></div>
+          <script>
+            (function () {
+              Reva.ui.createPropertyTabs('#revaPropertyTabsOnHead', { compact: true });
+            }());
+          </script>
+        </div>
+        <div data-label="Back to top ↑" data-type="flat" data-w="button" id="backToTopProperty"></div>
+        <div class="navLinks">{% include '../parts/navigation.twig' %}</div>
+        {% include '../parts/header-menu.twig' %}
+      </div>
+    </div>
+  </div>
+
+    <div class="backgroundVideo">
+      <div id="bgVideo"></div>
+      <script type="text/javascript">
+        (function () {
+          var youtube = window.location.href.toLowerCase().indexOf('north-dakota/jamestown/deer-ridge-apartments') !== -1;
+          var vimeo = window.location.href.toLowerCase().indexOf('north-dakota/minot/commons-and-landing-at-southgate') !== -1;
+          if (!youtube && !vimeo) return;
+          Reva.ui.createBackgroundVideo('#bgVideo', {
+            src: youtube ? 'https://www.youtube.com/watch?v=rOyJFHB8xWY' : 'https://vimeo.com/350354229',
+            fallback: 'https://images.squarespace-cdn.com/content/5c8aa8e6aadd341e9e874998/1559153134652-LRO1UAPCCHSX1A7ZIF90/01-Welcome+to+Regency+Park+Estates%21.jpg?format=2500w&content-type=image%2Fjpeg'
+          });
+        }());
+      </script>
+    </div>
+    <div class="carousel-section">
+        <div id="carousel"></div>
+        <script type="text/javascript">
+          (function () {
+            if (window.location.href.toLowerCase().indexOf('north-dakota/jamestown/deer-ridge-apartments') > -1 ||
+              window.location.href.toLowerCase().indexOf('north-dakota/minot/commons-and-landing-at-southgate') > -1) return;
+            var props = {
+              pictures: [
+                {
+                  source: 'https://static1.squarespace.com/static/5a8210b6cd39c34fde7d3562/t/5a94957be2c4839ef3f50993/1526653689360/Spacious%2C+Private+SF+Townhomes?format=1500w',
+                  alt: 'Picture 2'
+                },
+                {
+                  source:
+                    'https://images.squarespace-cdn.com/content/5c8aa8e6aadd341e9e874998/1559153134652-LRO1UAPCCHSX1A7ZIF90/01-Welcome+to+Regency+Park+Estates%21.jpg?format=2500w&content-type=image%2Fjpeg',
+                  alt: 'Picture 01',
+                },
+                {
+                  source:
+                    'https://images.squarespace-cdn.com/content/5c8aa8e6aadd341e9e874998/1559153157705-4OY69PKU4QYYJER8JKR5/02-Breakfast+Bar+for+Casual+Dining.jpg?format=2500w&content-type=image%2Fjpeg',
+                  alt: 'Picture 02',
+                },
+                {
+                  source:
+                    'https://images.squarespace-cdn.com/content/5c8aa8e6aadd341e9e874998/1559153184151-47Y01RCB6CZICTV7QOZH/03-Open+Dining+Space+Leads+into+the+Kitchen+%26+The+Living+Room.jpg?format=2500w&content-type=image%2Fjpeg',
+                  alt: 'Picture 03',
+                },
+                {
+                  source:
+                    'https://images.squarespace-cdn.com/content/5c8aa8e6aadd341e9e874998/1559153219303-27V7AL359HRY4CS2FSUM/04-Cozy+Dens+with+Stylish+French+Doors.jpg?format=2500w&content-type=image%2Fjpeg',
+                  alt: 'Picture 04',
+                },
+                {
+                  source:
+                    'https://images.squarespace-cdn.com/content/5c8aa8e6aadd341e9e874998/1559153248661-X15J1LWSIEVI0IRT5AD5/05-Master+Bedroom+with+Private+Powder+Room.jpg?format=2500w&content-type=image%2Fjpeg',
+                  alt: 'Picture 05',
+                },
+                {
+                  source:
+                    'https://images.squarespace-cdn.com/content/5c8aa8e6aadd341e9e874998/1559153291590-L9PY6RHGZM8SYAK52LT6/06-Spacious+%26+Large+Closets.jpg?format=2500w&content-type=image%2Fjpeg',
+                  alt: 'Picture 06',
+                },
+                {
+                  source:
+                    'https://images.squarespace-cdn.com/content/5c8aa8e6aadd341e9e874998/1559153324683-7S1MD2E0CFLIYXN9A912/07-Unwind+in+the+Hot+Tub.jpg?format=2500w&content-type=image%2Fjpeg',
+                  alt: 'Picture 07',
+                },
+              ],
+              videos: [
+                {
+                  source: 'https://www.youtube.com/embed/Ju6kx6E32WA?1',
+                  fallback: 'https://images.squarespace-cdn.com/content/5c8aa8e6aadd341e9e874998/1559153324683-7S1MD2E0CFLIYXN9A912/07-Unwind+in+the+Hot+Tub.jpg?format=2500w&content-type=image%2Fjpeg',
+                }, {
+                  source: 'https://www.youtube.com/embed/Ju6kx6E32WA?2',
+                  fallback: 'https://images.squarespace-cdn.com/content/5c8aa8e6aadd341e9e874998/1559153324683-7S1MD2E0CFLIYXN9A912/07-Unwind+in+the+Hot+Tub.jpg?format=2500w&content-type=image%2Fjpeg'
+                },
+              ],
+              tours: [
+                {
+                  source: 'https://my.matterport.com/show/?model=U1vHeQjKZ99&1',
+                  fallback: 'https://images.squarespace-cdn.com/content/5c8aa8e6aadd341e9e874998/1559153324683-7S1MD2E0CFLIYXN9A912/07-Unwind+in+the+Hot+Tub.jpg?format=2500w&content-type=image%2Fjpeg'
+                }, {
+                  source: 'https://my.matterport.com/show/?model=U1vHeQjKZ99&2',
+                  fallback: 'https://images.squarespace-cdn.com/content/5c8aa8e6aadd341e9e874998/1559153324683-7S1MD2E0CFLIYXN9A912/07-Unwind+in+the+Hot+Tub.jpg?format=2500w&content-type=image%2Fjpeg'
+                },
+              ],
+              bgVideo: location.href.indexOf('property/minnesota/minneapolis-metro/71-france') > -1
+                ? { src: 'https://www.youtube.com/watch?v=AFap0HL0ymw', fallback: 'https://images.squarespace-cdn.com/content/5c8aa8e6aadd341e9e874998/1559153324683-7S1MD2E0CFLIYXN9A912/07-Unwind+in+the+Hot+Tub.jpg?format=2500w&content-type=image%2Fjpeg' } :
+                (location.href.indexOf('property/minnesota/minneapolis-metro/red-20-apartments') > -1
+                  ? { src: 'https://vimeo.com/350354229', fallback: 'https://images.squarespace-cdn.com/content/5c8aa8e6aadd341e9e874998/1559153324683-7S1MD2E0CFLIYXN9A912/07-Unwind+in+the+Hot+Tub.jpg?format=2500w&content-type=image%2Fjpeg' } : undefined)
+            }
+            Reva.ui.createCarouselWidget('#carousel', props)
+          }());
+        </script>
+    </div>
+    <div id="propertySpecials"></div>
+    <script type="text/javascript">
+      (function () {
+        Reva.ui.createPropertySpecialsWidget('#propertySpecials');
+      }());
+    </script>
+    <div class="cWrapper mainContent">
+      <div>
+        <div id="resident-login"></div>
+        <script>
+          (function () {
+            Reva.ui.createResidentWidget('#resident-login');
+          }());
+        </script>
+      </div>
+      <div class="propertyInfo">
+        <div class="rw_propertyDetails" id="propertyDetails">
+          <script type="text/x-twig">
+            {% verbatim %}
+              {% if storeLoading == false %}
+                <div class="rw_smallLayout"
+                  data-property-phone="{{ propertyPhone }}"
+                  data-property-address="{{ propertyAddress }}"
+                >
+                  <div data-c="searchBox"></div>
+                  <div class="rw_propertyDetails_info">
+                    <p class="rw_propertyDetails_infoPrice bold text">{{ propertyStartingPriceString }}</p>
+                    <p class="text">{{ propertyAddress }}</p>
+                    <p class="text">Office Hours:
+                      {{ propertyOfficeHours }}</p>
+                  </div>
+                  <div class="rw_propertyDetail_actions">
+                    <span data-c="btnLinkTo" data-label="Explore the map" data-target=".exploreSection" data-type="flat"></span>
+                    <span data-c="btnContactUs" data-label="contact us"></span>
+                    <span data-c="btnShareURL" data-label="Share"></span>
+                    <span data-c="socialMediaIcons" />
+                  </div>
+                  {% if propertyPhone is not empty %}
+                    <span class="phoneBtn" data-c="labelPhone" data-phone="{{ propertyPhone }}"></span>
+                  {% endif %}
+                   <div class="rw_btn_find_your_apartment" style="padding-bottom: 10px">
+                    <div data-big="true" data-c="scheduleATour" data-label="Schedule a tour"></div>
+                   </div>
+                  <div class="rw_btn_find_your_apartment"><div data-big="true" data-c="btnLinkTo" data-label="Find Your New Home" data-target=".findYourApartment"></div></div>
+                </div>
+                <div class="rw_mediumLayout">
+                  <div class="rw_propertyDetails_top">
+                    <div data-c="searchBox"></div>
+                    <div style="display: inline-flex">
+                      <div data-id="btnScheduleATour" data-big="true" data-c="scheduleATour" data-label="Schedule a tour"></div>
+                      <div data-big="true" data-c="btnLinkTo" data-id="btnFindYourApartment"  data-label="Find Your New Home" data-target=".findYourApartment"></div>
+                    </div>
+                  </div>
+                  <div class="propertyDetails_content">
+                    <div class="rw_propertyDetails_info">
+                      <p class="rw_propertyDetails_infoPrice bold text" data-property-min-price="{{propertyStartingPriceString}}" data-id="propertyDetailsInfoPrice">{{ propertyStartingPriceString }}</p>
+                      <p class="text" data-id="propertyDetailsInfoAddress">{{ propertyAddress }}
+                        <span data-c="btnLinkTo" data-label="Explore the map" data-target=".exploreSection" data-type="flat"></span>
+                      </p>
+                      <p class="text" data-id="propertyDetailsOfficeHours">Office Hours:
+                        {{ propertyOfficeHours }}</p>
+                    </div>
+                    <div class="rw_propertyDetails_contactData">
+                      {% if propertyPhone is not empty %}
+                        <span class="phoneBtn" data-c="labelPhone" data-phone="{{ propertyPhone }}"></span>
+                      {% endif %}
+                      <div class="links_section">
+                        <span data-c="btnContactUs" data-label="contact us"></span>
+                        <span data-c="btnShareURL" data-label="Share"></span>
+                      </div>
+                      <span data-c="socialMediaIcons" />
+                    </div>
+                  </div>
+                </div>
+              {% endif %}
+              {% if storeLoading == true %}
+                <div data-c="propertyDetailsPlaceholder"></div>
+              {% endif %}
+            {% endverbatim %}
+          </script>
+        </div>
+        <script type="text/javascript">
+          (function () {
+            Reva.ui.createPropertyInfoWidget('#propertyDetails');
+          }());
+        </script>
+      </div>
+      <div class="reva_page_sections" id="revaPropertyTabs"></div>
+      <script>
+        (function() {
+          Reva.ui.createPropertyTabs('#revaPropertyTabs');
+        }());
+      </script>
+      <div class="propertyDescription">
+        <h2 class="serifFont blockTitle" data-reva-section-short="Description" data-reva-section="Property description" id="sectionPropertyDescription">Property Description</h2>
+        <div data-id="propertyDescription" class="rw_pd_container">
+          <div class="rw_pd_container_block">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna arcu, pharetra id maximus id, viverra id turpis. Nullam fermentum lacus dui,
+               in dictum lorem gravida nec. Suspendisse quam lacus, mattis nec ante a, ullamcorper sodales nunc. Aliquam semper lacus at tellus imperdiet, quis
+               faucibus ex suscipit.</p>
+
+            <p>Vestibulum interdum eros eget justo tristique, eu commodo nulla porttitor. Praesent tincidunt urna ligula, nec blandit quam eleifend at.
+               Cras quis magna eu arcu pellentesque rutrum nec eu neque. Nam ullamcorper diam sed ornare aliquam. Aliquam erat volutpat. Suspendisse lorem orci, mattis nec mauris sed, lobortis semper elit.</p>
+          </div>
+          <div data-id="descriptionHighlights" class="rw_pd_bullet_block">
+            <ul>
+              <li>Less than a five minute stroll to upscale</li>
+              <li>shopping at Byerly&apos;s grocery store, Galleria Edina and Southdale Center</li>
+              <li>Connected via walking paths to bustling Centennial Lakes Park</li>
+              <li>10 miles to downtown Minneapolis</li>
+              <li>17 miles to downtown St. Paul</li>
+              <li>10 mile to MSP International Airport</li>
+            </ul>
+          </div>
+          <div id="chatGardenWidget"></div>
+          <script>
+            (function () {
+              "use strict";
+              var token = "{{ TOKEN }}";
+              var host = "{{ TENANT_HOST }}";
+              document.addEventListener('DOMContentLoaded', function () {
+                Reva.ui.createChatGardenWidget('#chatGardenWidget', {
+                  token: token,
+                  host: host
+                });
+              })
+            })();
+          </script>
+        </div>
+      </div>
+      <h2 id="contactUsTitle" class="serifFont">Contact us to learn more</h2>
+      <div class="rw_gallery_block">
+        <div class="rw_image_01"></div>
+        <div class="rw_image_02"></div>
+      </div>
+    </div>
+    <div class="communityHighlights">
+      <h2 class="serifFont blockTitle" data-reva-section="Highlights" id="sectionCommunityHighlights">Community Highlights</h2>
+      {# <style type="text/css">
+        /* Example of global class to change the color of the lifestyle-icon */
+        .ss-lifestyle-icon { background: red !important; }
+      </style> #}
+      <div id="lifeStyles">
+        <script type="text/x-twig">
+          {% verbatim %}
+            <div class="rw_communityHighlights" data-lifestyles="{{lifeStylesList}}" data-property-amenities="{{propertyAmenitiesList}}" data-layout-amenities="{{layoutAmenitiesList}}">
+              {% if storeLoading == false %}
+                <h3 class="serifFont rw_ch_title">LifeStyles</h3>
+                <div class="rw_ch_lifestyles">
+                  {% for lifeStyle in lifeStyles %}
+                    <div data-c="lifeStyleIcon" data-icon-class-name="ss-lifestyle-icon" data-icon="{{ lifeStyle.infographicName }}" data-display-name="{{ lifeStyle.displayName }}"></div>
+                  {% endfor %}
+                </div>
+              {% endif %}
+              {% if storeLoading == true %}
+                <div data-c="lifeStylesPh"></div>
+              {% endif %}
+              <div class="rw_ch_divider"></div>
+              {% if storeLoading == false %}
+                <h3 class="serifFont rw_ch_title">Community Amenities</h3>
+                <ul data-id="communityAmenitiesList" class="rw_ch_amenities">
+                  {% for amenity in propertyAmenities %}
+                    <li>{{ amenity.displayName }}</li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+              {% if storeLoading == true %}
+                <div data-c="amenitiesPh"></div>
+              {% endif %}
+              <div class="rw_ch_divider"></div>
+              {% if storeLoading == false %}
+                <h3 class="serifFont rw_ch_title">Floorplan Amenities</h3>
+                <ul data-id="floorplanAmenitiesList" class="rw_ch_amenities">
+                  {% for amenity in layoutAmenities %}
+                    <li>{{ amenity.displayName }}</li>
+                  {% endfor %}
+                </ul>
+                <p class="rw_ch_smallPrint smallPrint">* Floorplans vary and may not include all the floorplan amenities</p>
+              {% endif %}
+              {% if storeLoading == true %}
+                <div data-c="amenitiesPh"></div>
+              {% endif %}
+            </div>
+          {% endverbatim %}
+        </script>
+      </div>
+      <script type="text/javascript">
+        (function () {
+          Reva.ui.createLifeStylesWidget('#lifeStyles');
+        }());
+      </script>
+    </div>
+    <div class="findYourApartment">
+      <h2 class="blockTitle serifFont" data-reva-section="Floor plans" id="sectionFloorplans">Find Your New Home</h2>
+      <div id="inventorySelector"></div>
+      <script type="text/javascript">
+        (function () {
+          Reva.ui.createInventorySelectorWidget('#inventorySelector');
+        }());
+      </script>
+    </div>
+    <div class="exploreSection">
+      <h2 class="blockTitle serifFont" data-reva-section-short="Map" data-reva-section="Explore The Area" id="sectionExploreMap">Explore the Neighborhood</h2>
+      {% include '../parts/propertyMap.twig' %}
+    </div>
+    <div class="otherCommunities">
+      <div class="oc_smallLayout">
+        <h2 class="blockTitle serifFont">Other communities</h2>
+      </div>
+      <div class="oc_mediumLayout">
+        <h2 class="title serifFont">Similar Communities Recommended For You</h2>
+      </div>
+      <div id="relatedProperties"></div>
+      <div id="contactUsForm"></div>
+      <script type="text/javascript">
+        (function () {
+          Reva.ui.createRelatedPropertiesWidget('#relatedProperties', {
+            onPropertyClick: function onPropertyClick(item) {
+              Reva.navigator.navigateTo(item.url);
+            }
+          });
+        }());
+      </script>
+    </div>
+  </div>
+</div>
+{% endblock %}
+{% block revaJSLoaded %}
+<script>
+  (function () {
+    var store = Reva.stores.getWebSiteStore();
+    store.setPropertyFromSlug('{{ slug }}');
+    var THRESHOLD = 16;
+    var MAX_TABS_THRESHOLD = 100;
+
+    Reva.ui.createPropertyRichTextResultsWidget();
+
+    document.addEventListener('DOMContentLoaded', function () {
+      var revaPropertyTabs = document.querySelector('#revaPropertyTabs');
+      store.propertyTabsStore.loadFromDOM('[data-reva-section]');
+      var btnBackToTop = document.querySelector('#backToTopProperty');
+
+      var getScrollingElement = Reva.utils.getScrollingElement;
+
+      btnBackToTop.addEventListener('click', function () {
+        getScrollingElement().scrollTop = 0;
+      });
+      var header = document.querySelector('#header');
+      var checkScrollPosition = Reva.utils.debounce(function () {
+        var scrollTop = getScrollingElement().scrollTop;
+        var searchVisibleThreshold = scrollTop > revaPropertyTabs.offsetTop + MAX_TABS_THRESHOLD;
+        header.setAttribute('data-tabs-visible', searchVisibleThreshold);
+      }, THRESHOLD);
+      checkScrollPosition();
+      window.addEventListener('scroll', checkScrollPosition);
+    });
+  }());
+</script>
+{% endblock %}

@@ -1,0 +1,39 @@
+.PhoneButton {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: .625rem .25rem;
+
+  .textContainer {
+    margin-bottom: 0;
+  }
+
+  .svg {
+    position: relative;
+    width: 26px;
+    height: 26px;
+
+    svg {
+      position: absolute;
+      top: 6px;
+      left: 0;
+
+      fill: #333;
+    }
+  }
+
+  .phone {
+    font-size: 20px;
+    font-weight: 500;
+    padding-left: .5rem;
+    text-decoration: none;
+    color: rgba(0,0,0,.87);
+  }
+
+  .callUs {
+    font-size: 13px;
+    margin-right: 5px;
+    margin-left: 2px;
+  }
+}

@@ -1,0 +1,54 @@
+.poiMarkerContainer {
+  position: relative;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  .poiMarkerIcon {
+    width: (28rem/16);
+    height: (36rem/16);
+
+    &.school {
+      fill: #7b9eb0;
+    }
+
+    &.shopping {
+      fill: #4b96f3;
+    }
+
+    &.bank {
+      fill: #919de2;
+    }
+
+    &.hospital {
+      fill: #f88181;
+    }
+
+    &.cinema {
+      fill: #14b6c6;
+    }
+
+    &.restaurant {
+      fill: #ff9e67;
+    }
+
+    &.transit {
+      fill: #10bdff;
+    }
+
+    &.noCategoryMatch {
+      fill: #4864f7;
+    }
+  };
+
+  .poiMarkerCategoryIcon {
+    position: absolute;
+    top: (6rem/16);
+    left: (7rem/16);
+    width: (14rem/16);
+    height: (14rem/16);
+
+    fill: white;
+  };
+};

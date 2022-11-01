@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`cloudinary should wrap the provided url in a cloudinary url 1`] = `"https://res.cloudinary.com/revat/image/fetch/dpr_1.0,f_auto,c_fill,q_auto:best,g_auto:no_faces,e_improve,e_auto_brightness,fl_force_strip/https%3A%2F%2Fsomepath%2Fto%2Fan%2Fimage%3Fq%3D1"`;
+
+exports[`cloudinary when the url is reva api images endpoint if width is set combine it with other params 1`] = `"https://reva.tech/api/images/someOtherParam?cParams=dpr_1.0%2Cw_100%2Cf_auto%2Cc_fill%2Cq_auto%3Abest%2Cg_auto%3Ano_faces%2Ce_improve%2Ce_auto_brightness%2Cfl_force_strip%2F&q=1"`;
+
+exports[`cloudinary when the url is reva api images endpoint should return the same url but with the cParams property set 1`] = `"https://reva.tech/api/images/someOtherParam?cParams=dpr_1.0%2Cf_auto%2Cc_fill%2Cq_auto%3Abest%2Cg_auto%3Ano_faces%2Ce_improve%2Ce_auto_brightness%2Cfl_force_strip%2F&q=1"`;

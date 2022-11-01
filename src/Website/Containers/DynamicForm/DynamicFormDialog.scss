@@ -1,0 +1,65 @@
+.dialogContentWrapper {
+  min-width: 500px;
+}
+
+.mainContainer {
+  width: 90vw;
+  min-width: 384px;
+  max-width: 100vw;
+  min-height: (420rem/16);
+
+  &.small2 {
+    width: auto;
+    min-width: 650px;
+  }
+}
+
+[data-browser='msie11'] {
+  .mainContainer {
+    // This prevents the issues with the SizeAware
+    // component in IE11 (it is bad to use one
+    // inside a Dialog, it causes a loop)
+    width: (605rem/16);
+  }
+}
+
+.dynamicFormClassName {
+  padding: .5rem;
+
+  &.noPadding {
+    padding-top: 0;
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+.thankYouContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100vw;
+  min-height: 616px;
+  padding: (24rem/16);
+
+  &.small2 {
+    max-width: (600rem/16);
+  }
+
+  .thankYouImage {
+    width: (50rem/16);
+    height: (40rem/16);
+    margin: 25% 0 3em 0;
+
+    path {
+      opacity: .54;
+
+      fill: black;
+    }
+  }
+
+  .btnClose {
+    margin-top: (36rem/16);
+    margin-bottom: (36rem/16);
+  }
+}

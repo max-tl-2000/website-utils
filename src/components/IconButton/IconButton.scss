@@ -1,0 +1,78 @@
+@import '../../scss/_colors';
+@import '../../scss/common';
+
+.IconButton {
+  &[data-component='icon-button'] {
+    min-width: auto;
+    padding: 0;
+
+    &.wide {
+      width: 100%;
+    }
+
+    &.hasLabel {
+      padding: 0 .3rem 0 1rem;
+
+      &.big {
+        padding-top: .4rem;
+        padding-bottom: .4rem;
+      }
+
+      &.iconOnLeft {
+        padding: 0 1rem 0 .3rem;
+      }
+    }
+
+    .iconWrapper {
+      svg {
+        width: (17rem/16);
+        height: (17rem/16);
+
+        fill: vars(--reva-global-text-primary-color-lf, #fff);
+      }
+
+      &.dark {
+        svg {
+          fill: vars(--reva-global-accent-color, $darkBlue);
+        }
+      }
+
+      &.disabled {
+        svg {
+          fill: vars(--reva-global-text-disabled-color, $grey79);
+        }
+      }
+
+      &.secondary {
+        svg {
+          fill: $grey46;
+        }
+      }
+    }
+  }
+
+  .children-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    height: (39rem/16);
+  }
+
+  .label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .iconWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: (39rem/16);
+    height: (39rem/16);
+    transition: background .3s ease-out;
+    border-radius: 100%;
+    background: rgba($grey62, 0);
+  }
+}

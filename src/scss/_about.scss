@@ -1,0 +1,14 @@
+.contactDescription {
+  min-height: (600rem/16);
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 (24rem/16);
+
+    [data-medium='true'] & {
+      flex-direction: row;
+      padding: 0 (90rem/16) (130rem/16);
+    }
+  }
+}

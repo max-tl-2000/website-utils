@@ -1,0 +1,59 @@
+{
+    "Messages": {
+      "Message": [],
+      "version": "1.0"
+    },
+    "name": "ScheduleTour",
+    "Objects": [
+      {
+        "currentProperty": "SomeProp",
+        "selectedMoveInDate": null,
+        "selectedTerms": "6,12",
+        "currentStep": "CollectAppointmentTime",
+        "currentStepNumber": 1,
+        "totalSteps": 7,
+        "rule": "ScheduleTour",
+        "workflowName": "ScheduleTour",
+        "step": {
+            "conversationContext": "Absolutely!  Find a date and time convenient for you to meet with one of our community experts.",
+            "widget": [
+                {
+                    
+                    "widgetName": "appointmentDatePicker",
+                    "timeZone": "default",
+                    "startDate": "default",
+                    "displayVariable": [
+                        {
+                            "name": "APPOINTMENT_TIME",
+                            "format": "dddd, MMM Do, at h:mm a"
+                        }
+                    ],
+                    "button": [
+                        {
+                        "conversationConsumer": "$APPOINTMENT_TIME works for me",
+                        "displayText": "Select $APPOINTMENT_TIME",
+                        "nullDisplayText": "Select date",
+                        "style": "primary",
+                        "targetStep": "CollectFullName",
+                        "order": 1
+                        }
+                    ],
+                    "isRequired": true,
+                    "storeField": "appointmentTime",
+                    "order": "1"
+                }
+            ],
+            "totalSteps": 7,
+            "nextStep": "CollectFullName",
+            "stepNumber": 1,
+            "tertiaryButton": [
+                {
+                "conversationConsumer": "Please take me back to the beginning",
+                "displayText": "Back to beginning",
+                "targetStep": "home"
+                }
+            ]
+        }
+      }
+    ]
+  }

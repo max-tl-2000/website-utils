@@ -1,0 +1,51 @@
+@import '../../../scss/_colors.scss';
+@import '../../../scss/_common.scss';
+
+.user-activity-container {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  min-height: (56rem/16);
+  padding: (10rem/16) (24rem/16);
+  opacity: .95;
+  background: vars(--reva-global-attention-note-bg, $yellow200);
+
+  .message {
+    .text {
+      font-size: (12rem/16);
+      font-weight: 500;
+      line-height: (20rem/16);
+      color: rgba($black, .87);
+    }
+
+    .privacy-policy {
+      padding-left: (4rem/16);
+      text-decoration: underline;
+      text-transform: uppercase;
+    }
+  }
+
+  .attestation {
+    margin-left: (18rem/16);
+
+    button {
+      font-size: (12rem/16);
+      padding: (9rem/16) (27rem/16);
+
+      &:focus {
+        outline: none;
+
+        [data-input-method='keyboard'] & {
+          @include focusOutlineProps();
+        }
+      }
+    }
+  }
+}
+
+.attestation-Container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}

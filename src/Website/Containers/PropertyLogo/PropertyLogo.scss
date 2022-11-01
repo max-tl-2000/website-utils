@@ -1,0 +1,60 @@
+.propertyLogo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: (100rem/16);
+  height: 100%;
+
+  .logoImage {
+    width: (100rem/16);
+    height: (36rem/16);
+
+    &.usePropertyName {
+      display: none;
+    }
+  }
+
+  .pointer {
+    cursor: pointer;
+  }
+
+  .useNameText {
+    font-size: (13rem/16);
+    font-weight: bold;
+    line-height: 1.2em;
+    margin: 0;
+  }
+
+  &.medium {
+    width: (210rem/16);
+    height: 100%;
+
+    .logoImage {
+      width: (170rem/16);
+      height: (60rem/16);
+    }
+
+    .useNameText {
+      font-size: (18rem/16);
+      line-height: 1.2em;
+      margin: 0;
+    }
+  }
+
+  .useNameWrapper {
+    text-align: center;
+  }
+
+  .propertyNameWrapper {
+    padding-left: (24rem/16);
+    text-align: left;
+  }
+}
+
+.propertyNameHeader {
+  position: absolute;
+  left: -9999px;
+}

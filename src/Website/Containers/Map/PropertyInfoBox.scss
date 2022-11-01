@@ -1,0 +1,67 @@
+.PropertyInfoBox {
+  width: (320rem / 16);
+  height: (260rem / 16);
+  cursor: pointer;
+}
+
+.propertyImageContainer {
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  width: 100%;
+  height: (165rem / 16);
+  border-radius: (5rem / 16) (5rem / 16) 0 0;
+}
+
+.propertyImage {
+  width: 100%;
+  height: 100%;
+}
+
+.propertyName {
+  font-size: (24rem / 16);
+  font-weight: bold;
+  overflow: hidden;
+  padding: (12rem / 16) (10rem / 16) (2rem /16) (10rem / 16);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.propertyInfo {
+  font-size: (12rem / 16);
+  padding: 0 (10rem / 16);
+
+  .bold {
+    font-weight: 500;
+  }
+}
+
+.propertyInfoBoxBody {
+  width: 100%;
+  padding-bottom: .2rem;
+  border-radius: (5rem / 16) (5rem / 16) 0 0;
+  background: #fff;
+  box-shadow: 0 (4rem/16) (4rem/16) 0 rgba(0, 0, 0, .25);
+}
+
+.propertyInfoBoxAnchor {
+  position: relative;
+  width: 100%;
+  height: (4rem / 16);
+  border-radius: 0 0 (5rem / 16) (5rem / 16);
+  background: #fff;
+  box-shadow: 0 (4rem/16) (4rem/16) 0 rgba(0, 0, 0, .25);
+}
+
+.propertyInfoBoxAnchor::after {
+  position: absolute;
+  left: 50%;
+  width: 0;
+  height: 0;
+  margin-bottom: (-16rem / 16);
+  margin-left: (-16rem / 16);
+  content: '';
+  border: (16rem / 16) solid transparent;
+  border-top-color: #fff;
+  border-bottom: 0;
+}

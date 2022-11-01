@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.calendar {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 2.5rem;
+
+  fill: rgba(0,0,0,.27);
+}
+
+.title {
+  line-height: 1.2rem;
+  text-align: center;
+}
+
+.subTitle {
+  font-size: 1.1rem;
+  text-align: center;
+}
